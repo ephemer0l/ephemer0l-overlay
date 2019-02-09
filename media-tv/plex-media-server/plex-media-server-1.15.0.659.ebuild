@@ -24,11 +24,11 @@ RESTRICT="mirror bindist strip"
 RDEPEND="sys-apps/fix-gnustack"
 
 QA_PREBUILT="*"
-QA_MULTILIB_PATHS=( "usr/lib/plexmediaserver/lib/.*" ) 
+QA_MULTILIB_PATHS=( "usr/lib/plexmediaserver/lib/.*" )
 
 S="${WORKDIR}"
 
-PATCHES=( "${FILESDIR}/plexmediamanager.desktop.patch" )
+PATCHES=( "${FILESDIR}/plexmediamanager.desktop-${PV}.patch" )
 
 pkg_setup() {
 	enewgroup plex

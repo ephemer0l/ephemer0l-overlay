@@ -1,0 +1,8 @@
+--- /usr/share/applications/plexmediamanager.desktop	2019-02-09 01:33:22.746077416 -0600
++++ /usr/share/applications/plexmediamanager.desktop	2019-02-09 01:32:56.851548344 -0600
+@@ -6,4 +6,4 @@
+ Icon=plexmediamanager
+ Terminal=false
+ Type=Application
+-Categories=Audio;Music;Video;Player;Media;
++Categories=Audio;Music;Video;Player;AudioVideo;
