@@ -4,9 +4,9 @@
 EAPI="7"
 
 PYTHON_COMPAT=( python2_7 )
-inherit desktop eutils python-single-r1 pax-utils
+inherit desktop eutils pax-utils python-single-r1
 
-MY_BUILD="18196"
+MY_BUILD="18206"
 
 DESCRIPTION="Freeware advanced editor for dynamic and Web languages"
 HOMEPAGE="http://www.activestate.com/products/komodo_edit"
@@ -24,7 +24,7 @@ LICENSE="
 	OFL-1.1"
 
 SRC_URI="x86? ( http://downloads.activestate.com/Komodo/releases/${PV}/Komodo-Edit-${PV}-${MY_BUILD}-linux-x86.tar.gz )
-	amd64? ( http://downloads.activestate.com/Komodo/releases/${PV}/Komodo-Edit-${PV}-${MY_BUILD}-linux-x86_64.tar.gz )"
+	 amd64? ( http://downloads.activestate.com/Komodo/releases/${PV}/Komodo-Edit-${PV}-${MY_BUILD}-linux-x86_64.tar.gz )"
 
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
@@ -70,7 +70,7 @@ src_install() {
 
 	insinto /opt/"${PN}"
 	doins -r "${S}"/INSTALLDIR/share
-	mv "${S}"/INSTALLDIR/lib "${ED}opt/${PN}/" || die "Installation failed"
+	mv "${S}"/INSTALLDIR/lib "${ED}/opt/${PN}/" || die "Installation failed"
 
 	make_wrapper komodo-edit "${EPREFIX}"/opt/"${PN}"/lib/mozilla/komodo "${EPREFIX}"/opt/"${PN}"/lib/mozilla /usr/bin
 
@@ -78,7 +78,7 @@ src_install() {
 
 	make_desktop_entry \
 		"${EPREFIX}/usr/bin/komodo-edit" \
-		"Komodo Edit 10" \
+		"Komodo Edit 12" \
 		"${EPREFIX}/opt/${PN}/share/icons/komodo48.png" \
 		"Development;IDE;TextEditor" \
 		|| die "make_desktop_entry failed"
