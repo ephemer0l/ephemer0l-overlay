@@ -1,0 +1,3 @@
+CFLAGS="-O2 -pipe" CXXFLAGS="${CFLAGS}" crossdev -S -v --ov-output /usr/local/portage \
+--ex-gdb \
+--target armv6j-hardfloat-linux-gnueabi

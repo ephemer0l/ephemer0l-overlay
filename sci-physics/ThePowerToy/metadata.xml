@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<bugs-to>https://github.com/ThePowderToy/The-Powder-Toy/issues</bugs-to>
+		<changelog>https://github.com/ThePowderToy/The-Powder-Toy/releases</changelog>
+		<doc>https://powdertoy.co.uk/Wiki/W/Main_Page.html</doc>
+	</upstream>
+	<maintainer type="person">
+		<email>om@organizedmagnetism.com</email>
+		<name>Scott 'ephemer0l' Martin</name>
+	</maintainer>
+	<use>
+		<flag name="debug">Enables Debug Options</flag>
+		<flag name="fftw">use fftw3f for gravity.</flag>
+		<flag name="lua">Lua scripting</flag>
+		<flag name="opengl">Use OpenGL to render interface</flag>
+		<flag name="opengl-particles">Use OpenGL to render particles</flag>
+		<flag name="save-renderer">Compiles the save renderer</flag>
+	</use>
+	<longdescription>
+		The Powder Toy is a free physics sandbox game, which simulates 
+		air pressure and velocity, heat, gravity and a countless number
+		of interactions between different substances! The game provides
+		you with various building materials, liquids, gases and electronic
+		components which can be used to construct complex machines, guns,
+		bombs, realistic terrains and almost anything else. You can then
+		mine them and watch cool explosions, add intricate wirings, play
+		with little stickmen or operate your machine. You can browse and
+		play thousands of different saves made by the community or upload
+		your own – we welcome your creations!
+	</longdescription>
+</pkgmetadata>

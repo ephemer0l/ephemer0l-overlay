@@ -1,0 +1,11 @@
+--- Makefile.am	2017-07-31 05:36:21.225755830 -0500
++++ Makefile.am	2017-07-31 05:38:07.859080586 -0500
+@@ -41,7 +41,7 @@
+ if ENABLE_DEBUG
+     DEFAULT_CFLAGS = -DDEBUG -ggdb3 -O0
+ else
+-    DEFAULT_CFLAGS = -g -O2
++    DEFAULT_CFLAGS = ${CFLAGS} 
+ endif
+ comskip_CFLAGS = $(DEFAULT_CFLAGS)
+ comskip_gui_CFLAGS = $(DEFAULT_CFLAGS)

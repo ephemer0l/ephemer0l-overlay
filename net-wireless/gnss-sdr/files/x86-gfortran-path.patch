@@ -1,0 +1,21 @@
+--- a/work/gnss-sdr-9999/CMakeLists.txt	2014-11-11 00:06:44.706745957 -0600
++++ b/work/gnss-sdr-9999/CMakeLists.txt	2014-11-11 00:06:21.230078782 -0600
+@@ -541,6 +541,18 @@
+                        /usr/lib/gcc/i486-linux-gnu/4.6
+                        /usr/lib/gcc/i486-linux-gnu/4.7
+                        /usr/lib/gcc/i486-linux-gnu/4.8
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.7.0
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.7.1
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.7.2
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.7.3
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.7.4
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.8.0
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.8.1
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.8.2
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.8.3
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.9.0
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.9.1
++                       /usr/lib/gcc/i686-pc-linux-gnu/4.9.2
+                 )
+     if(NOT GFORTRAN)
+         message(" The gfortran library has not been found.")

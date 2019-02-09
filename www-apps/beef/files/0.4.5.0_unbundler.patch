@@ -1,0 +1,41 @@
+--- /beef-0.4.5.0/core/loader.rb.org	2014-12-22 08:30:14.116737356 -0600
++++ /beef-0.4.5.0/core/loader.rb	2014-12-22 08:39:39.550103453 -0600
+@@ -6,17 +6,28 @@
+ 
+ # @note Include here all the gems we are using
+ require 'rubygems'
+-require 'bundler/setup'
+-Bundler.require(:default)
+-require 'cgi'
+-require 'yaml'
+-require 'singleton'
+-require 'ipaddr'
+-require 'base64'
+-require 'xmlrpc/client'
+-require 'openssl'
++#require 'bundler/setup'
++#Bundler.require(:default)
++
++require 'eventmachine'
++require 'thin'
++require 'sinatra'
++require 'rack'
++require 'em-websocket'
++require 'uglifier'
++require 'ansi'
++require 'term/ansicolor'
++require 'dm-core'
++require 'json'
++require 'data_objects'
++require 'dm-sqlite-adapter'
++require 'parseconfig'
++require 'erubis'
++require 'dm-migrations'
++require 'msfrpc-client'
++require 'rubyzip'
+ require 'rubydns'
+-require 'sourcify'
++require 'geoip'
+ 
+ # @note Include the filters
+ require 'core/filters'

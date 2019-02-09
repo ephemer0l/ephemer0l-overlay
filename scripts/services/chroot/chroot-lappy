@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+ 
+depend() {
+   need localmount
+   need bootmisc
+}
+ 
+start() {
+     ebegin "Mounting chroot directories"
+     echo 0 > /proc/sys/kernel/grsecurity/chroot_caps
+     echo 0 > /proc/sys/kernel/grsecurity/chroot_deny_chmod
+     echo 0 > /proc/sys/kernel/grsecurity/chroot_deny_mount
+     mount -o rbind /dev /media/chroots/lappy/dev > /dev/null &
+     mount -t proc none /media/chroots/lappy/proc > /dev/null &
+     mount -o bind /sys /media/chroots/lappy/sys > /dev/null &
+     mount -o bind /tmp /media/chroots/lappy/tmp > /dev/null &
+     eend $? "An error occurred while mounting chroot directories"
+}
+ 
+stop() {
+     ebegin "Unmounting chroot directories"
+     umount -f /media/chroots/lappy/dev > /dev/null &
+     umount -f /media/chroots/lappy/proc > /dev/null &
+     umount -f /media/chroots/lappy/sys > /dev/null &
+     umount -f /media/chroots/lappy/tmp > /dev/null &
+     eend $? "An error occurred while unmounting chroot directories"
+}

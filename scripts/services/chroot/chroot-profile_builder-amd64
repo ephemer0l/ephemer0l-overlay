@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+ 
+depend() {
+   need localmount
+   need bootmisc
+}
+ 
+start() {
+     ebegin "Mounting chroot directories"
+     echo 0 > /proc/sys/kernel/grsecurity/chroot_caps
+     echo 0 > /proc/sys/kernel/grsecurity/chroot_deny_chmod
+     echo 0 > /proc/sys/kernel/grsecurity/chroot_deny_mount
+     mount -o rbind /dev /media/chroots/profile_builder-amd64/dev > /dev/null &
+     mount -t proc none /media/chroots/profile_builder-amd64/proc > /dev/null &
+     mount -o bind /sys /media/chroots/profile_builder-amd64/sys > /dev/null &
+     mount -o bind /tmp /media/chroots/profile_builder-amd64/tmp > /dev/null &
+     mount -o bind /var/tmp/portage /media/chroots/profile_builder-amd64/var/tmp/ > /dev/null &
+     mount -o bind /var/lib/overlays /media/chroots/profile_builder-amd64/var/lib/overlays > /dev/null &
+     eend $? "An error occurred while mounting chroot directories"
+}
+ 
+stop() {
+     ebegin "Unmounting chroot directories"
+     umount -f /media/chroots/profile_builder-amd64/dev/shm > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/dev/pts > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/dev/mqueue > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/dev/* > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/dev > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/proc > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/sys > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/var/tmp > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/tmp > /dev/null &
+     umount -f /media/chroots/profile_builder-amd64/var/lib/overlays > /dev/null &
+     eend $? "An error occurred while unmounting chroot directories"
+}

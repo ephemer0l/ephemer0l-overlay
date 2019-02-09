@@ -1,0 +1,13 @@
+#crossdev -C -t armv6j-hardfloat-linux-gnueabi
+crossdev -v --ov-output /usr/local/portage \
+--binutils 9999 \
+--gcc 4.9.2 \
+--kernel 3.17.9999 \
+--libc 9999 \
+--ex-gdb \
+--target armv6j-hardfloat-linux-gnueabi
+
+#--binutils 9999 \
+#--gcc 4.9.2 \
+#--kernel 3.17.9999 \
+#--libc 9999 \
