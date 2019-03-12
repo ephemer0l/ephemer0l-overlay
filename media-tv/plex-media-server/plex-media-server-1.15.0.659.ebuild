@@ -28,7 +28,7 @@ QA_MULTILIB_PATHS=( "usr/lib/plexmediaserver/lib/.*" )
 
 S="${WORKDIR}"
 
-PATCHES=( "${FILESDIR}/plexmediamanager.desktop-${PV}.patch" )
+PATCHES=( "${FILESDIR}/plexmediamanager.desktop.patch" )
 
 pkg_setup() {
 	enewgroup plex

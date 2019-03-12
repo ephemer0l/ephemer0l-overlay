@@ -1,8 +1,7 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libhdhomerun/libhdhomerun-20140121.ebuild,v 1.1 2014/05/04 01:27:42 cardoe Exp $
 
-EAPI=5
+EAPI=7
 
 inherit eutils
 
@@ -15,23 +14,18 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+RESTRICT="strip"
 
 S="${WORKDIR}/${PN}"
 
-src_prepare() {
-	epatch "${FILESDIR}/dont-strip.patch"
-}
-
-src_configure() {
-	:
+#src_prepare() {
+#	epatch "${FILESDIR}/dont-strip.patch"
+#}
+src_compile() {
+	make || die
 }
 
 src_install() {
 	dobin hdhomerun_config
-	dolib libhdhomerun.so
-
-	insinto /usr/include/hdhomerun
-	doins *.h
+	dolib.so libhdhomerun.so
 }
