@@ -24,7 +24,15 @@ Packages in the overlay
 
 [app-editors/Komodo-IDE] Freeware advanced IDE for dynamic and Web languages 
 
+[app-misc/XPL-SEARCH] 
+
 [dev-java/oracle-jdk-bin] you know what this is... 
+
+[dev-python/sabyenc] 
+
+[dev-util/aptana] 
+
+[dev-util/plasma] 
 
 [media-fonts/b612] Font family designed and tested to be used on aircraft cockpit screens  
 
@@ -35,6 +43,8 @@ Packages in the overlay
 [media-libs/libhdhomerun] 
 
 [media-libs/mbelib] Dep of net-wireless/dsd
+
+[media-sound/teamspeak-client-bin] 
 
 [media-tv/comskip] Free mpeg commercial detector
 
