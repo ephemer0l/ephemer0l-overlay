@@ -1,6 +1,5 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/hamlib/hamlib-1.2.15.ebuild,v 1.6 2012/11/11 17:34:40 tomjbe Exp $
 
 EAPI="6"
 PYTHON_COMPAT=( python2_7 )
@@ -8,14 +7,14 @@ PYTHON_COMPAT=( python2_7 )
 inherit eutils multilib python-r1
 
 DESCRIPTION="Ham radio backend rig control libraries"
-HOMEPAGE="http://sourceforge.net/apps/mediawiki/hamlib"
+HOMEPAGE="https://sourceforge.net/apps/mediawiki/hamlib"
 
 if [[ ${PV} == "9999" ]] ; then
-    EGIT_REPO_URI="https://github.com/N0NB/hamlib.git"
-    KEYWORDS=""
-    inherit git-r3
+	EGIT_REPO_URI="https://github.com/N0NB/hamlib.git"
+	KEYWORDS=""
+	inherit git-r3
 else
-    SRC_URI="https://github.com/N0NB/hamlib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/N0NB/hamlib/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64 x86 ~x86-fbsd"
 fi
 

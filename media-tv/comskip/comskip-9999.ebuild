@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -17,7 +17,7 @@ else
 	KEYWORDS="~amd64 ~x86"
 fi
 
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
 IUSE="debug donator gui static-libs"
 
@@ -41,7 +41,7 @@ src_configure() {
 		$(use_enable debug) \
 		$(use_enable donator) \
 		$(use_enable gui) \
-		$(use_enable static-libs static) 
+		$(use_enable static-libs static)
 }
 
 src_compile() {

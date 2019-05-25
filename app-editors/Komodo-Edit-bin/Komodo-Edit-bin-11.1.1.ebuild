@@ -1,10 +1,10 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="6"
 
 PYTHON_COMPAT=( python2_7 )
-inherit desktop eutils pax-utils python-single-r1
+inherit eutils python-single-r1 pax-utils
 
 MY_BUILD="18206"
 
@@ -24,10 +24,10 @@ LICENSE="
 	OFL-1.1"
 
 SRC_URI="x86? ( http://downloads.activestate.com/Komodo/releases/${PV}/Komodo-Edit-${PV}-${MY_BUILD}-linux-x86.tar.gz )
-	 amd64? ( http://downloads.activestate.com/Komodo/releases/${PV}/Komodo-Edit-${PV}-${MY_BUILD}-linux-x86_64.tar.gz )"
+	amd64? ( http://downloads.activestate.com/Komodo/releases/${PV}/Komodo-Edit-${PV}-${MY_BUILD}-linux-x86_64.tar.gz )"
 
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="-* ~x86 ~amd64"
 
 RESTRICT="strip mirror"
 
@@ -70,7 +70,7 @@ src_install() {
 
 	insinto /opt/"${PN}"
 	doins -r "${S}"/INSTALLDIR/share
-	mv "${S}"/INSTALLDIR/lib "${ED}/opt/${PN}/" || die "Installation failed"
+	mv "${S}"/INSTALLDIR/lib "${ED}opt/${PN}/" || die "Installation failed"
 
 	make_wrapper komodo-edit "${EPREFIX}"/opt/"${PN}"/lib/mozilla/komodo "${EPREFIX}"/opt/"${PN}"/lib/mozilla /usr/bin
 
@@ -78,7 +78,7 @@ src_install() {
 
 	make_desktop_entry \
 		"${EPREFIX}/usr/bin/komodo-edit" \
-		"Komodo Edit 12" \
+		"Komodo Edit 10" \
 		"${EPREFIX}/opt/${PN}/share/icons/komodo48.png" \
 		"Development;IDE;TextEditor" \
 		|| die "make_desktop_entry failed"

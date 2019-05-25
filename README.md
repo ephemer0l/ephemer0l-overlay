@@ -20,7 +20,11 @@ Or with layman:
 
 Packages in the overlay
 
-[app-editors/Komodo-Edit-bin] Freeware advanced editor for dynamic and Web languages  
+[app-editors/Komodo-Edit-bin] Freeware advanced editor for dynamic and Web languages 
+
+[app-editors/Komodo-IDE] Freeware advanced IDE for dynamic and Web languages 
+
+[dev-java/oracle-jdk-bin] you know what this is... 
 
 [media-fonts/b612] Font family designed and tested to be used on aircraft cockpit screens  
 
