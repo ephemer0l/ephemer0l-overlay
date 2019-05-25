@@ -30,18 +30,38 @@ Packages in the overlay
 
 [media-fonts/open-dyslexic] Opensource font for dyslexics and for high readability  
 
+[media-libs/hamlib] 
+
+[media-libs/libhdhomerun] 
+
+[media-libs/mbelib] Dep of net-wireless/dsd
+
 [media-tv/comskip] Free mpeg commercial detector
 
 [media-tv/hdhomerun_confing_gui] SiliconDust HDHomeRun Configuration Utiltiy  
 
 [media-tv/plex-media-server] A free media library that is intended for use with a plex client  
 
-[net-analyzer/w3af] Web Application Attack and Audit Framework
+[media-video/filebot] File renamer
+
+[media-video/plex-ffmpeg] Plex Inc. version of ffmpeg 
+
+[net-ftp/pftp] 
+
+[net-ftp/pftp-shit] 
 
 [net-irc/quasselgrep] Tool for searching quassel logs from the commandline  
+
+[net-news/yencode] 
+
+[net-news/yydecode] 
+
+[net-wireless/dsd] Digital Speach Decoder
 
 [net-wireless/gr-*] GNU Radio modules
 
 [net-wireless/virtualradar-bin] Open-source .NET application for ads-b mapping
 
-[www-apps/beef] Browser exploitation framework
+[sci-physics/ThePowerToy]
+
+
