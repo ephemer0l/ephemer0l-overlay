@@ -18,7 +18,7 @@ else
 	KEYWORDS="~amd64 ~x86"
 fi
 
-DESCRIPTION="The powerful curses-based ftp/fxp client, shit edition"
+DESCRIPTION="The powerful curses-based ftp/fxp client"
 HOMEPAGE="https://web.archive.org/web/20150402150211/http://www.geekspot.nl/?page_id=6"
 
 LICENSE="BSD"
