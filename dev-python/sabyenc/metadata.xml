@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+	<name>Scott Martin</name>
+</maintainer>
+<longdescription lang="en">
+	Modified the original yenc module for use within SABnzbd.
+
+	The module was extended to do header parsing and full yEnc decoding from 
+	a Python list of chunks, the way in which data is retrieved from usenet.
+	This is particularly beneficial when SSL is enabled, which limits the size
+	of each chunk to 16K. Parsing these	chunks in python is much more costly.
+	Additionally, this module releases Python's GIL	during decoding, greatly
+	increasing performance of the overall download process.
+</longdescription>
+<description>Modified the original yenc module for use within SABnzbd.</description>
+<slot>
+	<name>0</name>
+</slot>
+<subslots>0</subslots>
+<use>
+	<flag> name="test">For testing</flag>
+</use>
+<upstream>
+	<name>Alessandro Duca</name>
+	<email>alessandro.duca@gmail.com</email>
+	<changelog></changelog>
+	<bugs-to>https://github.com/sabnzbd/sabyenc/issues</bugs-to>
+</upstream>
+<pkg></pkg>
+<cat></cat>
+</pkgmetadata>
