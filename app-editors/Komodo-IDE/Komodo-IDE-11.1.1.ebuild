@@ -1,9 +1,9 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="7"
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python{2_7,3_{6,7}} )
 inherit eutils python-single-r1 pax-utils
 
 MY_BUILD="91089"
@@ -67,9 +67,9 @@ src_install() {
 	make_wrapper komodo-ide "${EPREFIX}"/opt/"${PN}"/lib/mozilla/komodo "${EPREFIX}"/opt/"${PN}"/lib/mozilla /usr/bin
 
 	make_desktop_entry \
-		"${EPREFIX}/usr/bin/komodo-ide" \
-		"Komodo Edit 10" \
-		"${EPREFIX}/opt/${PN}/share/icons/komodo48.png" \
+		""${EPREFIX}"/usr/bin/komodo-ide" \
+		"Komodo Edit "${PV}"" \
+		""${EPREFIX}"/opt/"${PN}"/share/icons/komodo48.png" \
 		"Development;IDE;TextEditor" \
 		|| die "make_desktop_entry failed"
 }

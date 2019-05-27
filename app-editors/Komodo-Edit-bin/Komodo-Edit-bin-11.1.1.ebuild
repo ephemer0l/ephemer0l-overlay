@@ -1,9 +1,9 @@
 # Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="7"
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python{2_7,3_{6,7}} )
 inherit eutils python-single-r1 pax-utils
 
 MY_BUILD="18206"
@@ -34,19 +34,19 @@ RESTRICT="strip mirror"
 IUSE="pax_kernel"
 
 RDEPEND="
+	gnome-base/libgnome
+	gnome-base/libgnomeui
+	media-libs/gstreamer
+	media-libs/mesa
+	media-sound/pulseaudio[alsa]
+	sys-apps/dbus
 	virtual/jpeg
 	virtual/libc
-	x11-libs/gtk+[introspection]
 	x11-base/xorg-server
+	x11-themes/gtk-engines-adwaita
 	x11-libs/gdk-pixbuf
-	gnome-base/libgnomeui
-	gnome-base/libgnome
-	x11-libs/gtk+
-	sys-apps/dbus
+	x11-libs/gtk+[introspection]
 	x11-libs/libXt
-	media-libs/mesa
-	media-libs/gstreamer
-	media-sound/pulseaudio[alsa]
 	!app-editors/komodo-edit"
 
 QA_PREBUILT="*"
@@ -77,9 +77,9 @@ src_install() {
 	newicon "${S}/INSTALLDIR/share/icons/komodo48.png" komodo-edit48.png
 
 	make_desktop_entry \
-		"${EPREFIX}/usr/bin/komodo-edit" \
-		"Komodo Edit 10" \
-		"${EPREFIX}/opt/${PN}/share/icons/komodo48.png" \
+		""${EPREFIX}"/usr/bin/komodo-edit" \
+		"Komodo Edit "${PV}"" \
+		""${EPREFIX}"/opt/"${PN}"/share/icons/komodo48.png" \
 		"Development;IDE;TextEditor" \
 		|| die "make_desktop_entry failed"
 }
