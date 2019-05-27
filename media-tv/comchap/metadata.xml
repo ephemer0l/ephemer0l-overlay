@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<name>Scott Martin</name>
+	<email>ephemer0l+gentoo@organizedmagnetism.com</email>
+</maintainer>
+<upstream>
+	<bugs-to>https://github.com/BrettSheleski/comchap/issues</bugs-to>
+</upstream>
+<longdescription lang="en">
+	Commercial detection script to add chapters into video file	
+</longdescription>
+</pkgmetadata>

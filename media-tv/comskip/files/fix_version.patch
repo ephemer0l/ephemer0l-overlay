@@ -1,8 +1,0 @@
---- configure.ac	2017-07-31 05:40:46.015734202 -0500
-+++ configure.ac	2017-07-31 05:41:19.879064693 -0500
-@@ -1,4 +1,4 @@
--AC_INIT([Comskip], [0.81.098], [https://github.com/erikkaashoek/Comskip/issues])
-+AC_INIT([Comskip], [${PV}], [https://github.com/erikkaashoek/Comskip/issues])
- AM_INIT_AUTOMAKE([-Wall -Werror foreign])
- 
- : ${CFLAGS=""}
