@@ -8,7 +8,7 @@ inherit pax-utils systemd unpacker user
 DESCRIPTION="A free media library that is intended for use with a plex client"
 HOMEPAGE="https://www.plex.tv/"
 
-_COMMIT="d893009fb"
+_COMMIT="359b06978"
 MY_PV="${PV}-${_COMMIT}"
 
 URI="https://downloads.plex.tv/plex-media-server-new"
@@ -20,15 +20,20 @@ LICENSE="Plex"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 RESTRICT="mirror bindist strip"
+IUSE="system-openssl"
 
-RDEPEND="sys-apps/fix-gnustack"
+RDEPEND="sys-apps/fix-gnustack
+	system-openssl? ( dev-libs/openssl:0 )"
 
 QA_PREBUILT="*"
-QA_MULTILIB_PATHS=( "usr/lib/plexmediaserver/lib/.*" )
+QA_MULTILIB_PATHS=( "usr/lib/plexmediaserver/lib/.*"
+	"usr/lib/plexmediaserver/Resources/Python/lib/python2.7/.*"
+	"usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_hashlib.so" )
+
+PATCHES=( "${FILESDIR}/add_gentoo_profile_as_platform_version.patch"
+	"${FILESDIR}/plex-media-server-LD_CONFIG.patch" )
 
 S="${WORKDIR}"
-
-PATCHES=( "${FILESDIR}/plexmediamanager.desktop.patch" )
 
 pkg_setup() {
 	enewgroup plex
@@ -52,6 +57,11 @@ src_install() {
 	# Remove Debian specific files
 	rm -r "${S}/usr/share/doc" || die
 
+	# Remove shipped openssl library
+	if use system-openssl; then
+		rm -f usr/lib/plexmediaserver/libssl.so.1.0.0 || die
+	fi
+
 	# Copy main files over to image and preserve permissions so it is portable
 	cp -rp usr/ "${ED}" || die
 
@@ -68,8 +78,8 @@ src_install() {
 	systemd_dounit "${FILESDIR}"/systemd/"${PN}".service
 
 	keepdir /var/lib/plexmediaserver
-	echo "export LD_LIBRARY_PATH=\"${EPREFIX}/usr/lib/plexmediaserver/lib\"" \
-		> ${ED}/var/lib/plexmediaserver/.bash_profile || die
+#	echo "export LD_LIBRARY_PATH=\"${EPREFIX}/usr/lib/plexmediaserver/lib\"" \
+#		> ${ED}/var/lib/plexmediaserver/.bash_profile || die
 
 	# Adds the precompiled plex libraries to the revdep-rebuild's mask list
 	# so it doesn't try to rebuild libraries that can't be rebuilt.
