@@ -8,7 +8,7 @@ inherit pax-utils systemd unpacker user
 DESCRIPTION="A free media library that is intended for use with a plex client"
 HOMEPAGE="https://www.plex.tv/"
 
-_COMMIT="359b06978"
+_COMMIT="deeb86e7f"
 MY_PV="${PV}-${_COMMIT}"
 
 URI="https://downloads.plex.tv/plex-media-server-new"
@@ -22,8 +22,7 @@ KEYWORDS="-* ~amd64 ~x86"
 RESTRICT="mirror bindist strip"
 IUSE="system-openssl"
 
-RDEPEND="sys-apps/fix-gnustack
-	system-openssl? ( dev-libs/openssl:0 )"
+RDEPEND="system-openssl? ( dev-libs/openssl:0 )"
 
 QA_PREBUILT="*"
 QA_MULTILIB_PATHS=( "usr/lib/plexmediaserver/lib/.*"
@@ -87,7 +86,7 @@ src_install() {
 	insinto /etc/revdep-rebuild
 	doins "${FILESDIR}"/etc/revdep-rebuild/80plexmediaserver
 
-	fix-gnustack -f "${ED%/}/usr/lib/plexmediaserver/lib/libgnsdk_dsp.so.3.10.1" || die
+	#fix-gnustack -f "${ED%/}/usr/lib/plexmediaserver/lib/libgnsdk_dsp.so.3.10.1" || die
 
 	pax-mark m "${ED%/}/usr/lib/plexmediaserver/Plex Script Host" || die
 #	pax-mark m "${ED%/}/usr/lib/plexmediaserver/Plex Media Scanner" || die
