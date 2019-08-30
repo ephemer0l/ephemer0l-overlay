@@ -60,6 +60,8 @@ Packages in the overlay
 
 [net-ftp/pftp-shit] 
 
+[net-irc/Limnoria] Python based extensible IRC infobot and channel bot
+
 [net-irc/quasselgrep] Tool for searching quassel logs from the commandline  
 
 [net-news/yencode] 
