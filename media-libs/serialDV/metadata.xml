@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		C++ Minimal interface to encode and decode audio with AMBE3000 \
+		based devices in packet mode over a serial link.
+	</longdescription>
+	<upstream>
+		<bugs-to>https://github.com/f4exb/serialDV/issues</bugs-to>
+	</upstream>
+</pkgmetadata>

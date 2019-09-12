@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		about foo, ...
+	</longdescription>
+	<maintainer type="person">
+		<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<use>
+		<flag name="mbelib">adds software decoding with media-libs/mbelib</flag>
+	</use>
+	<upstream>
+		<bugs-to>https://github.com/f4exb/dsdcc/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
