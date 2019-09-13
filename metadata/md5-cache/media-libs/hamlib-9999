@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup unpack
+DEPEND==virtual/libusb-0* dev-libs/libxml2 tcl? ( dev-lang/tcl ) virtual/pkgconfig dev-lang/swig >=sys-devel/libtool-2.2 doc? ( app-doc/doxygen ) >=dev-vcs/git-1.8.2.1[curl]
+DESCRIPTION=Ham radio backend rig control libraries
+EAPI=6
+HOMEPAGE=https://sourceforge.net/apps/mediawiki/hamlib
+IUSE=doc python tcl python_targets_python2_7
+LICENSE=LGPL-2 GPL-2
+PROPERTIES=live
+RDEPEND==virtual/libusb-0* dev-libs/libxml2 tcl? ( dev-lang/tcl )
+RESTRICT=test
+SLOT=0
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	git-r3	562b380fc59ae6a8622171d0acb777d1	ltprune	2729691420b6deeda2a90b1f1183fb55	multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	preserve-libs	ef207dc62baddfddfd39a164d9797648	python-r1	ce1cd23cfdc1848e8e32743efe34f299	python-utils-r1	08e17157a6807add7db1f8d01e7e391f	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=c1940907836bdc757fc86ca76ebd1277

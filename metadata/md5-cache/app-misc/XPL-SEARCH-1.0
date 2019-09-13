@@ -1,0 +1,9 @@
+DEFINED_PHASES=install postinst
+DESCRIPTION=Search exploits in multiple exploit databases!
+EAPI=6
+HOMEPAGE=https://github.com/CoderPirata/XPL-SEARCH/
+KEYWORDS=~amd64
+RDEPEND=>=dev-lang/php-5.5.8[cli,curl] >=net-misc/curl-7.40.0
+SLOT=0
+SRC_URI=https://github.com/CoderPirata/XPL-SEARCH/tarball/d4dbc9765645d71b59a944d6699a43eaeb3ddbc6 -> XPL-SEARCH-1.0.tar.gz
+_md5_=be6553ad3e4a57c8acc7d3484cce95e5

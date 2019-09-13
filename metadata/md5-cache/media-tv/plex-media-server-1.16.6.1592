@@ -1,0 +1,14 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=install postinst setup unpack
+DESCRIPTION=A free media library that is intended for use with a plex client
+EAPI=7
+HOMEPAGE=https://www.plex.tv/
+IUSE=system-openssl
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=Plex
+RDEPEND=system-openssl? ( dev-libs/openssl:0 )
+RESTRICT=mirror bindist strip
+SLOT=0
+SRC_URI=amd64? ( https://downloads.plex.tv/plex-media-server-new/1.16.6.1592-b9d49bdb7/debian/plexmediaserver_1.16.6.1592-b9d49bdb7_amd64.deb ) x86? ( https://downloads.plex.tv/plex-media-server-new/1.16.6.1592-b9d49bdb7/debian/plexmediaserver_1.16.6.1592-b9d49bdb7_i386.deb )
+_eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	pax-utils	db85a3c508cf82c45f24b2723791cc93	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56	unpacker	3cd8bad0d31e525cd26be1bfa4e61631	user	00484e1be1aac73e24fca1c99557a7d6
+_md5_=5cd689f59a5e75702b3e9b8e95d165ce

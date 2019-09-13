@@ -1,0 +1,13 @@
+DEFINED_PHASES=install setup
+DESCRIPTION=Freeware advanced editor for dynamic and Web languages
+EAPI=7
+HOMEPAGE=http://www.activestate.com/products/komodo_edit
+IUSE=pax_kernel python_targets_python2_7 python_targets_python3_6 python_targets_python3_7 python_single_target_python2_7 python_single_target_python3_6 python_single_target_python3_7
+KEYWORDS=-* ~x86 ~amd64
+LICENSE=MPL-1.1 MIT Boost-1.0 CC-BY-2.5 CC-BY-3.0 SilverCity LGPL-2.1 LGPL-3 PSF-2 Apache-2.0 OFL-1.1
+RDEPEND=gnome-base/libgnome gnome-base/libgnomeui media-libs/gstreamer media-libs/mesa media-sound/pulseaudio[alsa] sys-apps/dbus virtual/jpeg virtual/libc x11-base/xorg-server x11-themes/gtk-engines-adwaita x11-libs/gdk-pixbuf x11-libs/gtk+[introspection] x11-libs/libXt !app-editors/komodo-edit
+RESTRICT=strip mirror
+SLOT=0
+SRC_URI=x86? ( http://downloads.activestate.com/Komodo/releases/11.1.1/Komodo-Edit-11.1.1-18206-linux-x86.tar.gz ) amd64? ( http://downloads.activestate.com/Komodo/releases/11.1.1/Komodo-Edit-11.1.1-18206-linux-x86_64.tar.gz )
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	multilib	1d91b03d42ab6308b5f4f6b598ed110e	pax-utils	db85a3c508cf82c45f24b2723791cc93	python-single-r1	3a0fc81f484bfdbd9c2b7448015a36e4	python-utils-r1	08e17157a6807add7db1f8d01e7e391f	toolchain-funcs	a3a237ef6c0c58546bf23b2c382f9e56
+_md5_=da1d82e0f1c3b36df4d3a317cfc67db3
