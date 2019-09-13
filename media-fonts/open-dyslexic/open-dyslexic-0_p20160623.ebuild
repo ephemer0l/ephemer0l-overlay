@@ -11,7 +11,6 @@ _GIT_USER="antijingoist"
 _MY_COMMIT=03aa683
 _MY_LONG_COMMIT=03aa68333abaef14718091a46bff52794b34cf39
 
-
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/"${_GIT_USER}"/open-dyslexic.git"
 	KEYWORDS=""

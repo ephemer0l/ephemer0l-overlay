@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://git.polarsys.org/gitroot/b612/b612.git"
 
 KEYWORDS=""
 
-LICENSE="EPL"
+LICENSE="ESL-2 OFL-1.1"
 SLOT="0"
 
 FONT_SUFFEX="ttf"
