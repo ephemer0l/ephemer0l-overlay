@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">A utility to provision an IAXy single-port Ethernet-to-telephone adapter,
+		speaking the Asterisk-native IAX protocol, and designed for use with Asterisk.
+	</longdescription>
+</pkgmetadata>
