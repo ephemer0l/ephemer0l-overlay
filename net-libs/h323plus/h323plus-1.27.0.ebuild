@@ -1,20 +1,21 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
 MY_P="${PN}-v${PV//./_}"
 
-DESCRIPTION="Open Source implementation of the ITU H.323 teleconferencing protocol, successor to OpenH323"
+DESCRIPTION="ITU H.323 implementation of teleconferencing protocol, successor to OpenH323"
 HOMEPAGE="http://www.h323plus.org/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}-v${PV//./_}.tar.gz"
+SRC_URI="https://github.com/willamowius/h323plus/archive/v1_27_0.tar.gz -> ${P}.tar.gz"
 
 IUSE="aec debug +sound +video"
 SLOT="0/${PV}"
 LICENSE="MPL-1.1"
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~sparc ~x86"
+#KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 DEPEND=">=net-libs/ptlib-2.6.4:=[-debug,wav]
 	aec? ( >=media-libs/speex-1.2_rc1 )

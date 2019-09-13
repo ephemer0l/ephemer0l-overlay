@@ -1,14 +1,13 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit eutils
 
 DESCRIPTION="SiliconDust HDHomeRun Utilties"
 HOMEPAGE="http://www.silicondust.com/support/hdhomerun/downloads/linux/"
 SRC_URI="http://download.silicondust.com/hdhomerun/${PN}_${PV}.tgz"
-#SRC_URI="http://download.silicondust.com/hdhomerun/libhdhomerun_20141210.tgz"
 
 LICENSE="LGPL-3+"
 SLOT="0"
@@ -20,9 +19,7 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
 
-src_prepare() {
-	epatch "${FILESDIR}/dont-strip.patch"
-}
+PATCHES="${FILESDIR}"/dont-strip.patch
 
 src_configure() {
 	:
@@ -30,7 +27,7 @@ src_configure() {
 
 src_install() {
 	dobin hdhomerun_config
-	dolib libhdhomerun.so
+	dolib.a libhdhomerun.so
 
 	insinto /usr/include/hdhomerun
 	doins *.h

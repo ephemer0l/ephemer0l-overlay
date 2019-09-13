@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <!-- maintainer-needed -->
-  <use>
-    <flag name="aec">Enable acoustic echo cancellation</flag>
-    <flag name="sound">Enable audio codecs</flag>
-    <flag name="video">Enable video codecs</flag>
-  </use>
-  <upstream>
-    <remote-id type="sourceforge">h323plus</remote-id>
-  </upstream>
+	<maintainer type="person">
+		<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		H.323 is the leading protocol for videoconferencing, with virtually every
+		videoconferencing solution in the world using H.323 in order to establish
+		voice and video communication sessions. With its superior handling of video
+		and conference control, no other protocol comes close to matching the 
+		capabilities of H.323 for video..
+	</longdescription>
+	<use>
+		<flag name="aec">Enable acoustic echo cancellation</flag>
+		<flag name="sound">Enable audio codecs</flag>
+		<flag name="video">Enable video codecs</flag>
+	</use>
+	<upstream>
+		<changelog>https://github.com/willamowius/h323plus/commits/master</changelog>
+		<bugs-to>https://github.com/willamowius/h323plus/issues</bugs-to>
+	</upstream>
 </pkgmetadata>

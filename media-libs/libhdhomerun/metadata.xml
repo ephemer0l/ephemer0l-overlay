@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+	<maintainer type="person">
+		<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		SiliconDust HDHomeRun Utilties
+	</longdescription>
+	<upstream>
+		<doc>https://forum.silicondust.com/forum/</doc>
+		<bugs-to>https://www.silicondust.com/support/trouble-ticket/</bugs-to>
+	</upstream>
 </pkgmetadata>
-

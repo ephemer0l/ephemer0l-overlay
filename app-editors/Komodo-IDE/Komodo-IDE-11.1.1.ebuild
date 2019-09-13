@@ -1,9 +1,11 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
+
+# Broken
 
 EAPI="7"
 
-PYTHON_COMPAT=( python{2_7,3_{6,7}} )
+PYTHON_COMPAT=( python3_{6,7} )
 inherit eutils python-single-r1 pax-utils
 
 MY_BUILD="91089"
@@ -22,10 +24,11 @@ LICENSE="MPL-1.1
 	Apache-2.0
 	OFL-1.1
 "
-SRC_URI="x86? ( http://downloads.activestate.com/Komodo/releases/${PV}/${PN}-${PV}-${MY_BUILD}-linux-x86.tar.gz )
-	amd64? ( http://downloads.activestate.com/Komodo/releases/${PV}/${PN}-${PV}-${MY_BUILD}-linux-x86_64.tar.gz )"
+SRC_URI="x86? ( http://downloads.activestate.com/Komodo/releases/${PV}/${PN}-${PV}-${MY_BUILD}-linux-x86.tar.gz -> ${P}.tar.gz )
+	amd64? ( http://downloads.activestate.com/Komodo/releases/${PV}/${PN}-${PV}-${MY_BUILD}-linux-x86_64.tar.gz -> ${P}.tar.gz )"
+
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 
 RESTRICT="strip mirror"
 

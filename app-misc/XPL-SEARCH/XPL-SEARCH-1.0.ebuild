@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DESCRIPTION="Search exploits in multiple exploit databases!"
 HOMEPAGE="https://github.com/CoderPirata/XPL-SEARCH/"
@@ -16,18 +16,15 @@ if [[ ${PV} == "9999" ]] ; then
 	inherit git-r3
 else
 	SRC_URI="https://github.com/"${_GIT_USER}"/"${PN}"/tarball/"${_MY_LONG_COMMIT}" -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
 fi
 
-#WORKDIR='${PORTAGE_TMPDIR}/portage/${CATEGORY}/${PF}/work/${P}'
-WORKDIR="${S}/${P}"
+S="${S}/${P}"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE=""
 
-DEPEND=""
 RDEPEND="${DEPEND}
 	>=dev-lang/php-5.5.8[cli,curl]
 	>=net-misc/curl-7.40.0"
