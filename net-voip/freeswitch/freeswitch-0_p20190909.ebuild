@@ -11,7 +11,6 @@ inherit autotools eutils flag-o-matic python-single-r1 user java-pkg-opt-2
 DESCRIPTION="FreeSWITCH telephony platform"
 HOMEPAGE="http://www.freeswitch.org/"
 
-KEYWORDS="~amd64 ~x86"
 LICENSE="MPL-1.1"
 SLOT="0"
 
@@ -22,11 +21,12 @@ if [ "${PV}" == "9999" ]; then
 elif [ "${PV}" == "0_p20190909" ]; then
 	_MY_COMMIT="75cfacf4c249a03c608718758619799707aae0ab"
 	_MY_URI="https://freeswitch.org/stash/rest/api/latest/projects/FS/repos/"
-	SRC_URI=""${_MY_LONG_URI}"/"${PN}"/archive?at="${_MY_LONG_COMMIT}"&format=tar.gz -> "${P}".tar.gz"
+	SRC_URI=""${_MY_URI}"/"${PN}"/archive?at="${_MY_COMMIT}"&format=tar.gz -> "${P}".tar.gz"
 	KEYWORDS="~amd64 ~x86"
 	#S=${WORKDIR}/${_GIT_USER}-${PN}-${_GIT_COMMIT}
 else
 	SRC_URI="http://files.freeswitch.org/releases/freeswitch/${P}.tar.xz"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 IUSE="esl +libedit odbc postgres +resampler +zrtp debug"
