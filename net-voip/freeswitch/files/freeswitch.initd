@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+# Copyright 1999-2016 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+	need net
+	after mysql postgresql
+}
+
+start() {
+	ebegin "Starting FreeSWITCH"
+
+	local freeswitch_user=${FREESWITCH_USER:-freeswitch}
+	local freeswitch_group=${FREESWITCH_GROUP:-freeswitch}
+
+	checkpath --quiet --directory --owner ${freeswitch_user}:${freeswitch_group} --mode 0770 "/var/run/freeswitch/" || {
+		eerror "Failed to create PID directory /var/run/freeswitch/"
+		eend 1
+		return 1
+	}
+
+	start-stop-daemon --background --user ${freeswitch_user} --group ${freeswitch_group} --start /usr/bin/freeswitch -- ${FREESWITCH_OPTS:--ncwait}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping FreeSWITCH"
+	start-stop-daemon --stop "/usr/bin/freeswitch"
+	eend $?
+}

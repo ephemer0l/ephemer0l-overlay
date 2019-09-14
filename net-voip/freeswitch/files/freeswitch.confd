@@ -1,0 +1,3 @@
+#FREESWITCH_OPTS="-ncwait"
+#FREESWITCH_USER=freeswitch
+#FREESWITCH_GROUP=freeswitch
