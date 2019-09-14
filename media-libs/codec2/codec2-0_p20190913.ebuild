@@ -22,7 +22,7 @@ elif [[ ${PV} == "0_p20190913" ]] ; then
     KEYWORDS="~amd64 ~x86"
     S=${WORKDIR}/${_GIT_USER}-${PN}-${_GIT_COMMIT}
 else
-    SRC_URI="https://github.com/f4exb/dsdcc/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+    SRC_URI="https://github.com/"${_GIT_USER}"/"${PN}"/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	#SRC_URI="http://files.freedv.org/${PN}/${P}.tar.xz"
     KEYWORDS="~amd64 ~x86"
 fi
