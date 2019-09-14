@@ -25,7 +25,6 @@ else
 	S="${WORKDIR}/${_GIT_USER}-${PN}-${_GIT_COMMIT}"
 fi
 
-
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
