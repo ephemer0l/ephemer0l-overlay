@@ -117,8 +117,8 @@ Packages in the overlay
 [net-libs/stfu]
 
 [net-misc/freetdm]
-[
-net-misc/wanpipe]
+
+[net-misc/wanpipe]
 
 [net-news/sabyenc]
 
