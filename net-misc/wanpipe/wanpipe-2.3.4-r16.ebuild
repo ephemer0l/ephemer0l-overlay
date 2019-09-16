@@ -1,23 +1,15 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: This ebuild is from freeswitch overlay; Bumped by mva; $
-#
 
-EAPI="4"
+EAPI="7"
 
-inherit linux-mod versionator
+inherit linux-mod
 
 MY_P="${PN}-${PV/_p/.}"
 DESCRIPTION="Wanpipe driver for Sangoma PCI/PCIe Telephony Cards"
 HOMEPAGE="http://www.sangoma.com/"
 
-if [ "${PV/_p/}" = "${PV}" ]; then
-	# release version
-	SRC_URI="ftp://ftp.sangoma.com/linux/current_wanpipe/${MY_P}.tgz"
-else
-	# post-release (patched) version
-	SRC_URI="ftp://ftp.sangoma.com/linux/custom/$(get_version_component_range 1-2)/${MY_P}.tgz"
-fi
+SRC_URI="ftp://ftp.sangoma.com/linux/current_wanpipe/wanpipe-2.3.4-16.tgz"
 
 IUSE="+dahdi"
 KEYWORDS="-*"
@@ -25,7 +17,7 @@ LICENSE=""
 SLOT="0"
 
 RDEPEND="dahdi? ( net-misc/dahdi )
-	sys-devel/gcc[cxx]"
+	sys-devel/gcc:*[cxx]"
 DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex"
@@ -57,11 +49,10 @@ src_prepare() {
 
 		cat ->"${S_DAHDI}/include/dahdi/version.h" <<-EOF
 		/*
-		 * Fake DAHDI version.h created by ${PF} ebuild
-		 */
+		* Fake DAHDI version.h created by ${PF} ebuild
+		*/
 		#define DAHDI_VERSION "${DAHDI_VER}"
 		EOF
-
 
 		if linux_chkconfig_builtin MODVERSIONS; then
 			# extract symbol version
@@ -166,7 +157,8 @@ src_compile() {
 src_install() {
 	# Install drivers, tools, headers and libs
 	# Use LDCONFIG="/bin/true" to avoid sandbox violation
-	emake -j1 install \
+	# emake -j1 install \
+	emake install \
 		ARCH="$(tc-arch-kernel)" \
 		WARCH="$(tc-arch-kernel)" \
 		DAHDI_DIR="${S_DAHDI}" \
