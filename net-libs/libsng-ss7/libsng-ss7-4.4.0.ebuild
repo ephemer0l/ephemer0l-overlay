@@ -1,6 +1,7 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-IUSE=""
+
+EAPI=7
 
 inherit eutils
 
@@ -9,8 +10,8 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Sangoma ISDN library"
 HOMEPAGE="http://www.sangoma.com/"
-SRC_URI="amd64? ( ftp://ftp.sangoma.com/linux/${MY_PN}/old/${MY_P}.x86_64.tgz )
-	 x86? ( ftp://ftp.sangoma.com/linux/${MY_PN}/old/${MY_P}.i686.tgz )"
+SRC_URI="amd64? ( ftp://ftp.sangoma.com/linux/${MY_PN}/${MY_P}.x86_64.tgz )
+	x86? ( ftp://ftp.sangoma.com/linux/${MY_PN}/${MY_P}.i686.tgz )"
 
 RESTRICT="mirror strip"
 
@@ -23,11 +24,6 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	# disable ldconfig
-	sed -i -e 's:ldconfig:#ldconfig:' install.sh || die "sed failed"
-}
-
 src_unpack() {
 	unpack ${A}
 
@@ -38,8 +34,20 @@ src_unpack() {
 	fi
 }
 
+src_prepare() {
+	sed -i -e "/@ldconfig/d" Makefile || die "sed failed"
+}
+
 src_install() {
 	dodir "/usr/$(get_libdir)"
 
 	emake DESTDIR="${D}/usr" install || die "emake install failed"
+
+	# generate libsng_ss7.so.X -> libsng_ss7.so symlink
+	ldconfig -n "${D}/usr/$(get_libdir)" || die "failed to generate versioned .so symlinks"
+
+	[ ! -e "${ROOT}/usr/$(get_libdir)/libssl.so.6" ] && {
+		einfo "Creating libssl.so.6 compat symlink"
+		ln -s "libssl.so" "${D}/usr/$(get_libdir)/libssl.so.6" || die "Failed to create libssl.so.6 compat symlink"
+	}
 }

@@ -1,23 +1,20 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/osptoolkit/osptoolkit-3.5.0.ebuild,v 1.4 2011/08/24 19:12:28 maekke Exp $
 
-EAPI="2"
+EAPI="7"
 
 inherit eutils multilib toolchain-funcs
 
-S_DATE="20120120"
-
 DESCRIPTION="Open Settlement Protocol development kit"
-HOMEPAGE="http://www.transnexus.com/OSP%20Toolkit/OSP%20Toolkit%20Documents/OSP%20Toolkit%20Documents.htm"
-SRC_URI="mirror://sourceforge/osp-toolkit/OSPToolkit-${PV}.tar.gz"
+HOMEPAGE="https://sourceforge.net/projects/osp-toolkit/"
+SRC_URI="https://sourceforge.net/projects/osp-toolkit/files/OSPToolkit-4.13.0.tar.gz/download"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-RDEPEND="dev-libs/openssl"
+RDEPEND="dev-libs/openssl:*"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}"/TK-${PV//./_}-${S_DATE}

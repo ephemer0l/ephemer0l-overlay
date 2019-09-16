@@ -1,13 +1,13 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 inherit eutils
 
 DESCRIPTION="Communication toolbox library"
 HOMEPAGE=""
-SRC_URI="https://iftools.com/download/${P/-//}/lib${P}.tar.gz"
+SRC_URI="https://iftools.com/download/files/legacy/lib"${PN}"-"${PV}".tar.gz"
 
 IUSE="gpib debug"
 

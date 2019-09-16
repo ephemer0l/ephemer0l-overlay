@@ -1,28 +1,31 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="4"
+EAPI=7
 
 inherit eutils
 
 DESCRIPTION="Network focused portable C++ class library providing high level functions"
 HOMEPAGE="http://www.opalvoip.org/"
-SRC_URI="mirror://sourceforge/opalvoip/${P}.tar.bz2
-	doc? ( mirror://sourceforge/opalvoip/${P}-htmldoc.tar.bz2 )"
+
+EGIT_REPO="https://sourceforge.net/p/opalvoip/ptlib/ci/master/tree/"
+EGIT_COMMIT="ff50e6db5f3f08e7b6dd95d8bb926a99a2b29666"
+#SRC_URI="mirror://sourceforge/opalvoip/${P}.tar.bz2
+#	doc? ( mirror://sourceforge/opalvoip/${P}-htmldoc.tar.bz2 )"
 
 LICENSE="MPL-1.0"
-SLOT="0"
+SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 # default enabled are features from 'minsize', the most used according to ptlib
 IUSE="alsa +asn +audio debug doc +dtmf examples ffmpeg ftp +http ipv6
-jabber ldap lua mail odbc oss pch pulseaudio qos remote sasl sdl serial
+jabber ldap lua mail odbc oss pulseaudio remote sasl sdl serial
 shmvideo snmp soap socks ssl static-libs +stun telnet tts v4l +video
 vxml wav xml xmlrpc"
 
 CDEPEND="
 	audio? ( alsa? ( media-libs/alsa-lib ) )
 	ldap? ( net-nds/openldap )
-	lua? ( dev-lang/lua )
+	lua? ( dev-lang/lua:* )
 	odbc? ( dev-db/unixODBC )
 	pulseaudio? ( media-sound/pulseaudio )
 	sasl? ( dev-libs/cyrus-sasl:2 )
@@ -44,11 +47,6 @@ DEPEND="${CDEPEND}
 # tools/ directory is ignored
 # avc plugin is disabled to fix bug 276514, see upstream bug 2821744
 
-conditional_use_warn_msg() {
-	ewarn "To enable ${1} USE flag, you need ${2} USE flag to be enabled"
-	ewarn "Please, enable ${2} or disable ${1}"
-}
-
 REQUIRED_USE="sdl? ( video )
 	jabber? ( xml )
 	vxml? ( http tts xml )
@@ -56,12 +54,10 @@ REQUIRED_USE="sdl? ( video )
 	soap? ( http xml )"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-svn_revision_override.patch"
-	epatch "${FILESDIR}/${P}-pkgconfig_ldflags.patch"
-	epatch "${FILESDIR}/${P}-respect_cxxflags.patch"
+	epatch "${FILESDIR}/${PN}-2.10.9-svn_revision_override.patch"
 
 	if ! use telnet; then
-		epatch "${FILESDIR}/${P}-disable-telnet-symbols.patch"
+		epatch "${FILESDIR}/${PN}-2.10.9-disable-telnet-symbols.patch"
 	fi
 
 	# remove visual studio related files from samples/
@@ -71,6 +67,11 @@ src_prepare() {
 		rm -f samples/*/*.dsp
 		rm -f samples/*/*.dsw
 	fi
+
+	if [[ ! -z ${TARGET+set} ]]; then
+		ewarn "TARGET variable is set. Removing as it would break the build, bug #465722."
+		unset TARGET
+	fi
 }
 
 src_configure() {
@@ -78,13 +79,13 @@ src_configure() {
 
 	# plugins are disabled only if ! audio and ! video
 	if ! use audio && ! use video; then
-		myconf="${myconf} --disable-plugins"
+		myconf+=" --disable-plugins"
 	else
-		myconf="${myconf} --enable-plugins"
+		myconf+=" --enable-plugins"
 	fi
 
 	# minsize: presets of features (overwritten by use flags)
-	# ansi-bool, atomicity: there is no reason to disable those features
+	# atomicity: there is no reason to disable this feature
 	# internalregex: we want to use system one
 	# sunaudio and bsdvideo are respectively for SunOS and BSD's
 	# appshare, vfw: only for windows
@@ -94,7 +95,6 @@ src_configure() {
 	# pipechan, configfile, resolver, url: force enabling
 	econf ${myconf} \
 		--disable-minsize \
-		--enable-ansi-bool \
 		--enable-atomicity \
 		--disable-internalregex \
 		--disable-sunaudio \
@@ -130,8 +130,6 @@ src_configure() {
 		$(use_enable pulseaudio pulse) \
 		$(use_enable odbc) \
 		$(use_enable oss) \
-		$(use_enable pch) \
-		$(use_enable qos) \
 		$(use_enable remote remconn) \
 		$(use_enable sasl) \
 		$(use_enable sdl) \
@@ -154,12 +152,12 @@ src_configure() {
 }
 
 src_compile() {
-	local makeopts=""
+	local makeopts="opt"
 	tc-env_build
 
 	use debug && makeopts="debug"
 
-	emake ${makeopts} || die "emake failed"
+	emake ${makeopts}
 }
 
 src_install() {
@@ -167,7 +165,7 @@ src_install() {
 
 	use debug && makeopts="DEBUG=1"
 
-	emake DESTDIR="${D}" ${makeopts} install || die "emake install failed"
+	emake DESTDIR="${D}" ${makeopts} install
 
 	# Get rid of static libraries if not requested
 	# There seems to be no easy way to disable this in the build system
@@ -176,29 +174,18 @@ src_install() {
 	fi
 
 	if use doc; then
-		dohtml -r "${WORKDIR}"/html/* || die "dohtml failed"
+		dohtml -r "${WORKDIR}"/html/*
 	fi
 
-	dodoc History.txt ReadMe.txt ReadMe_QOS.txt || die "dodoc failed"
-
-	if use audio || use video; then
-		newdoc plugins/ReadMe.txt ReadMe-Plugins.txt || die "newdoc failed"
-	fi
+	dodoc History.txt ReadMe.txt
 
 	if use examples; then
 		local exampledir="/usr/share/doc/${PF}/examples"
 		local basedir="samples"
-		local sampledirs="`ls samples --hide=Makefile`"
 
-		# first, install Makefile
-		insinto ${exampledir}/
-		doins ${basedir}/Makefile || die "doins failed"
-
-		# now, all examples
-		for x in ${sampledirs}; do
-			insinto ${exampledir}/${x}/
-			doins ${basedir}/${x}/* || die "doins failed"
-		done
+		insinto ${exampledir}
+		docompress -x ${exampledir}
+		doins -r ${basedir}/*
 	fi
 }
 

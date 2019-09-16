@@ -1,11 +1,13 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-LICENSE="MIT"
+
+EAPI=7
 
 FS_P='freeswitch-1.0.1'
 SRC_URI="http://files.freeswitch.org/${FS_P}.tar.gz"
-SLOT="0"
 KEYWORDS="~amd64 ~x86"
+LICENSE="MIT"
+SLOT="0"
 IUSE=""
 
 DEPEND=""

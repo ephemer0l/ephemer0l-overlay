@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
+	<maintainer type="person">
 		<email>neurogeek@gentoo.org</email>
 		<name>Jesus Rivero</name>
 	</maintainer>
@@ -11,7 +11,6 @@
 		<flag name="dtmf">Enable DTMF encoding/decoding support</flag>
 		<flag name="http">Enable HTTP support</flag>
 		<flag name="mail">Enable mail protocols (POP3/SMTP)</flag>
-		<flag name="qos">Enable QOS support</flag>
 		<flag name="remote">Enable remote connection support</flag>
 		<flag name="serial">Enable serial port support</flag>
 		<flag name="shmvideo">Enable shared memory video devices</flag>

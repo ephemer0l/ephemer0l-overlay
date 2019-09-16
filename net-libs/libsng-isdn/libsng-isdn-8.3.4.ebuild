@@ -1,6 +1,7 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-IUSE=""
+
+EAPI=7
 
 inherit eutils
 
@@ -10,7 +11,7 @@ MY_P="${MY_PN}-${PV}"
 DESCRIPTION="Sangoma ISDN library"
 HOMEPAGE="http://www.sangoma.com/"
 SRC_URI="amd64? ( ftp://ftp.sangoma.com/linux/${MY_PN}/${MY_P}.x86_64.tgz )
-	 x86? ( ftp://ftp.sangoma.com/linux/${MY_PN}/${MY_P}.i686.tgz )"
+	x86? ( ftp://ftp.sangoma.com/linux/${MY_PN}/${MY_P}.i686.tgz )"
 
 RESTRICT="mirror strip"
 
@@ -20,6 +21,7 @@ LICENSE="unknown"
 
 RDEPEND="net-misc/wanpipe"
 DEPEND="${RDEPEND}"
+IUSE=""
 
 S="${WORKDIR}/${MY_P}"
 
