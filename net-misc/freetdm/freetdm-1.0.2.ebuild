@@ -1,8 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
+
+EAPI=7
+
 inherit eutils
 
-DESCRIPTION="Library implementing unified high level API for both signaling and I/O for multiple telephony boards"
+DESCRIPTION="Unified high level API library for both signaling and I/O, for telephony boards"
 HOMEPAGE="http://www.freeswitch.org/"
 SRC_URI="ftp://ftp.sangoma.com/linux/${PN}/${P}.tar.gz"
 
@@ -28,7 +31,7 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install
 
-	dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO
 
 	# remove static module files
 	use static-libs || (
