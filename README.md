@@ -26,25 +26,47 @@ Packages in the overlay
 
 [app-misc/XPL-SEARCH] 
 
+[app-mobilephone/gsmlib]
+
 [dev-java/oracle-jdk-bin] you know what this is... 
 
-[dev-python/sabyenc] 
+[dev-libs/keystone]
+
+[dev-libs/serialDV]
 
 [dev-util/aptana] 
 
 [dev-util/plasma] 
 
+[games-simulation/ThePowderToy]
+
+[games-util/kaiEngine]
+
+[mail-filter/libspf2]
+
 [media-fonts/b612] Font family designed and tested to be used on aircraft cockpit screens  
 
 [media-fonts/open-dyslexic] Opensource font for dyslexics and for high readability  
 
+[media-libs/codec2]
+
+[mdia-libs/dsdcc]
+
 [media-libs/hamlib] 
+
+[media-libs/ilbc-freeswitch]
 
 [media-libs/libhdhomerun] 
 
 [media-libs/mbelib] Dep of net-wireless/dsd
 
+[media-sound/freeswitch-sounds]
+
+[media-sound/freeswitch-sounds-music]
+
 [media-sound/teamspeak-client-bin] 
+
+[media-tv/comchap]
 
 [media-tv/comskip] Free mpeg commercial detector
 
@@ -52,9 +74,13 @@ Packages in the overlay
 
 [media-tv/plex-media-server] A free media library that is intended for use with a plex client  
 
-[media-video/filebot] File renamer
+[media-video/filebot] File renamer 
 
 [media-video/plex-ffmpeg] Plex Inc. version of ffmpeg 
+
+[net-dialup/capi4k-utils]
+
+[net-dialup/misdnuser]
 
 [net-ftp/pftp] 
 
@@ -62,11 +88,51 @@ Packages in the overlay
 
 [net-irc/Limnoria] Python based extensible IRC infobot and channel bot
 
-[net-irc/quasselgrep] Tool for searching quassel logs from the commandline  
+[net-irc/quasselgrep] Tool for searching quassel logs from the commandline
+
+[net-libs/ctb]
+
+[net-libs/h323plus]
+
+[net-libs/libdingaling]
+
+[net-libs/libiaxclient]
+
+[net-libs/libisdn]
+
+[net-libs/libsng-isdn]
+
+[net-libs/libsng-ss7]
+
+[net-libs/libSquirrelFish]
+
+[net-libs/libteletone]
+
+[net-libs/osptoolkit]
+
+[net-libs/ptlib]
+
+[net-libs/sofia-sip]
+
+[net-libs/stfu]
+
+[net-misc/freetdm]
+[
+net-misc/wanpipe]
+
+[net-news/sabyenc]
 
 [net-news/yencode] 
 
 [net-news/yydecode] 
+
+[net-voip/freeswitch]
+
+[net-voip/freeswitch-mod_ssh]
+
+[net-voip/gtkiaxyprov]
+
+[net-voip/iaxyprov]
 
 [net-wireless/dsd] Digital Speach Decoder
 
@@ -74,6 +140,9 @@ Packages in the overlay
 
 [net-wireless/virtualradar-bin] Open-source .NET application for ads-b mapping
 
-[sci-physics/ThePowerToy]
+[sci-libs/amd-fftw]
 
+[sci-libs/armadillo]
+
+[sci-libs/libgeotiff]
 
