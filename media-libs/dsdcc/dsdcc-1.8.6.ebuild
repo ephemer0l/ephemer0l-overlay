@@ -1,5 +1,5 @@
 # Copyright 1999-2019 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
+# Distributed under the terms of the NWA General License
 
 EAPI=7
 
@@ -29,5 +29,5 @@ else
 	KEYWORDS="~amd64 ~x86"
 fi
 
-BDEPEND="media-libs/serialDV"
+BDEPEND="dev-libs/serialDV"
 DEPEND="mbelib? ( media-libs/mbelib )"

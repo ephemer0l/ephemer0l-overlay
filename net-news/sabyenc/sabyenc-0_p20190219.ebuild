@@ -1,11 +1,12 @@
-# Copyright 1999-2019 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
+# Copyright 2019 Gentoo Authors
+# Distributed under the terms of the NWA General License
 
 EAPI=7
 
-PYTHON_COMPAT=( python{2_7,3_{6,7}} )
+PYTHON_COMPAT=( python{2_7,3_{4,5,6,7}} )
+PYTHON_REQ_USE="test"
 
-inherit distutils-r1
+inherit distutils-r1 python-r1
 
 HOMEPAGE="https://github.com/sabnzbd/sabyenc"
 DESCRIPTION="Python yEnc package optimized for use within SABnzbd"
@@ -26,6 +27,4 @@ else
 fi
 
 LICENSE="LGPL-3"
-SLOT=0
-
-USE="test"
+SLOT="0"

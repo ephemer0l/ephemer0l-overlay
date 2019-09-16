@@ -13,7 +13,6 @@
 	<use>
 		<flag name="debug">Enables Debug Options</flag>
 		<flag name="fftw">use fftw3f for gravity.</flag>
-		<flag name="lua">Lua scripting</flag>
 		<flag name="opengl">Use OpenGL to render interface</flag>
 		<flag name="opengl-particles">Use OpenGL to render particles</flag>
 		<flag name="save-renderer">Compiles the save renderer</flag>

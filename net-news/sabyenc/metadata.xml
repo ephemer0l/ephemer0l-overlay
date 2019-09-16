@@ -15,20 +15,7 @@
 	Additionally, this module releases Python's GIL	during decoding, greatly
 	increasing performance of the overall download process.
 </longdescription>
-<description>Modified the original yenc module for use within SABnzbd.</description>
-<slot>
-	<name>0</name>
-</slot>
-<subslots>0</subslots>
-<use>
-	<flag> name="test">For testing</flag>
-</use>
 <upstream>
-	<name>Alessandro Duca</name>
-	<email>alessandro.duca@gmail.com</email>
-	<changelog></changelog>
 	<bugs-to>https://github.com/sabnzbd/sabyenc/issues</bugs-to>
 </upstream>
-<pkg></pkg>
-<cat></cat>
 </pkgmetadata>

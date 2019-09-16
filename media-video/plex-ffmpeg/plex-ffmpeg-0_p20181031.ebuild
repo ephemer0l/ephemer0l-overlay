@@ -8,7 +8,7 @@ inherit eutils flag-o-matic multilib multilib-minimal toolchain-funcs
 DESCRIPTION="Plex Transcoder, a ffmpeg fork from Plex Inc."
 HOMEPAGE="https://www.plex.tv/"
 
-SRC_URI="http://files.plexapp.com/mfeingol/ffmpeg/plex-ffmpeg-2016-12.tgz"
+SRC_URI="https://files.plexapp.com/elan/ffmpeg/"${PN}"-2018-10-31.tar.xz"
 
 SLOT="0"
 LICENSE="

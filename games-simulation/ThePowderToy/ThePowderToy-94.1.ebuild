@@ -1,5 +1,5 @@
-# Copyright 2018 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
+# Copyright 2018-2019 Gentoo Authors
+# Distributed under the terms of the om License
 
 EAPI=7
 
@@ -14,7 +14,7 @@ _GIT_PACKAGE="The-Powder-Toy"
 _MY_COMMIT=1cfd9d8fc72b085ba0d64a83e4bb2e1730dac008
 
 if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="https://github.com/"${_GIT_USER}"/.git"
+	EGIT_REPO_URI="https://github.com/"${_GIT_USER}"/"${_GIT_PACKAGE}".git"
 	KEYWORDS=""
 	inherit git-r3
 elif [[ ${PV} == "0_p*" ]] ; then

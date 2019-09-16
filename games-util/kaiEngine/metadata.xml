@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		XLink Kai is a global gaming network - bringing together XBox, XBox 360,
+		XBox One, Playstation 2, Playstation 3, Playstation 4, PSP, PS Vita,
+		Gamecube, and Switch, users, in one integrated community. It is software
+		running on your PC or Macintosh that allows you to play system-link enabled
+		games online for free. Kai is the only service that is not console specific,
+		and boasts one of the friendliest communites available.
+	</longdescription>
+	<upstream>
+		<bugs-to>https://www.teamxlink.co.uk/forum/</bugs-to>
+	</upstream>
+</pkgmetadata>
