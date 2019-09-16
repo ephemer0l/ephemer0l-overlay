@@ -1,24 +1,23 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: This ebuild is from freeswitch overlay; Bumped by mva; $
 
-EAPI="4"
+EAPI="7"
 IUSE="rcapid static-libs"
 
-inherit eutils autotools git-2 flag-o-matic
+inherit eutils autotools flag-o-matic
 
 DESCRIPTION="mISDN (modular ISDN) kernel link library and includes"
 HOMEPAGE="http://www.mISDN.eu/"
 
 EGIT_REPO_URI="git://git.misdn.eu/isdn4k-utils.git"
-EGIT_COMMIT="013a7b6cad848057340a40ebcf722453fd8b842a"
+EGIT_COMMIT="6c7bdc2a6456932f552018fcbb4aec2921cf2085"
 EGIT_BRANCH="master"
 
 LICENSE="|| ( GPL-2 LGPL-2.1 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="sys-libs/ncurses"
+RDEPEND="sys-libs/ncurses:*"
 DEPEND="${RDEPEND}"
 
 # base directory
