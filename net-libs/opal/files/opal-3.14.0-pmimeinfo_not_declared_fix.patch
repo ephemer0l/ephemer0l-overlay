@@ -1,0 +1,11 @@
+diff -uNr opal-3.14.0.orig/src/opal/opal_c.cxx opal-3.14.0/src/opal/opal_c.cxx
+--- opal-3.14.0.orig/src/opal/opal_c.cxx	2014-03-21 05:28:28.850000001 -0400
++++ opal-3.14.0/src/opal/opal_c.cxx	2014-03-21 10:27:09.200000001 -0400
+@@ -37,6 +37,7 @@
+ 
+ #include <opal.h>
+ #include <opal/manager.h>
++#include <sip/sippdu.h>
+ 
+ #include <ep/pcss.h>
+ #include <ep/localep.h>
