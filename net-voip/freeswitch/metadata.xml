@@ -140,14 +140,14 @@
 		<flag name="freeswitch_modules_snmp">SNMP event handeler (mod_event_snmp)</flag>
 			<!-- FM_FORMATS -->
 		<flag name="freeswitch_modules_local_stream">Local file streaming module (mod_local_stream)</flag>
-		<flag name="freeswitch_modules_native_file"></flag>
-		<flag name="freeswitch_modules_png"></flag>
+		<flag name="freeswitch_modules_native_file">?</flag>
+		<flag name="freeswitch_modules_png">?</flag>
 		<flag name="freeswitch_modules_portaudio_stream">Stream audio from a portaudio source (mod_portaudio_stream)</flag>
 		<flag name="freeswitch_modules_shell_stream">Stream audio from an external application (mod_shell_stream)</flag>
 		<flag name="freeswitch_modules_shout">Shoutcast streaming module (mod_shout)</flag>
 		<flag name="freeswitch_modules_sndfile">Module to add support for various sound file formats (mod_sndfile)</flag>
 		<flag name="freeswitch_modules_tone_stream">(Scriptable) Tone generator module (mod_tone_stream)</flag>
-		<flag name="freeswitch_modules_vlc"></flag>
+		<flag name="freeswitch_modules_vlc">?</flag>
 			<!-- FM_LANGUAGES -->
 		<flag name="freeswitch_modules_java">Java language module (mod_java)</flag>
 		<flag name="freeswitch_modules_lua">lua language module (mod_lua)</flag>
@@ -160,16 +160,16 @@
 		<flag name="freeswitch_modules_logfile">File logger module (mod_logfile)</flag>
 		<flag name="freeswitch_modules_syslog">Syslog logger module (mod_syslog)</flag>
 			<!-- FM_TIMERS -->
-		<flag name="freeswitch_modules_posix_timer"></flag>
-		<flag name="freeswitch_modules_timerfd"></flag>
+		<flag name="freeswitch_modules_posix_timer">?</flag>
+		<flag name="freeswitch_modules_timerfd">?</flag>
 			<!-- FM_XML -->
 		<flag name="freeswitch_modules_xml_cdr">XML CDR (Call-Detail-Record) module (mod_xml_cdr)</flag>
 		<flag name="freeswitch_modules_xml_curl">CURL XML Gateway module (mod_xml_curl)</flag>
 		<flag name="freeswitch_modules_xml_ldap">LDAP XML Gateway module (mod_xml_ldap)</flag>
-		<flag name="freeswitch_modules_xml_radius"></flag>
+		<flag name="freeswitch_modules_xml_radius">?</flag>
 		<flag name="freeswitch_modules_xml_rpc">XML RPC module (mod_xml_rpc)</flag>
-		<flag name="freeswitch_modules_xml_scgi"></flag>
+		<flag name="freeswitch_modules_xml_scgi">?</flag>
 			<!-- FM_EXTERNAL -->
-		<flag name="freeswitch_modules_ssh"></flag>
+		<flag name="freeswitch_modules_ssh">?</flag>
 	</use>
 </pkgmetadata>
