@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<use>
+		<flag name="capi">?</flag>
+	</use>
+	<upstream>
+		<changelog>http://www.misdn.eu/?p=repositories/mISDNuser.git;a=summary</changelog>
+	</upstream>
+</pkgmetadata>

@@ -1,25 +1,24 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: This ebuild is from freeswitch overlay; Bumped by mva; $
 
-EAPI="4"
+EAPI="7"
 
 IUSE="+capi static-libs"
 
-inherit base eutils autotools git-2
+inherit eutils autotools
 
 DESCRIPTION="mISDN (modular ISDN) kernel link library and includes"
 HOMEPAGE="http://www.mISDN.org/"
 
 EGIT_REPO_URI="git://git.misdn.eu/mISDNuser.git"
-EGIT_COMMIT="376ab1d56d654c8a5700dfaafe4e129854279b16"
-EGIT_BRANCH="socket"
+EGIT_COMMIT="a29326031eb1198b8609b4bc378afffaa4d86446"
+EGIT_BRANCH="master"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="sys-libs/ncurses
+RDEPEND="sys-libs/ncurses:0
 	capi? ( >=net-dialup/capi4k-utils-3.2.0
 		!!>=net-dialup/capi4k-utils-20050718
 		>=media-libs/spandsp-0.0.6_pre12 )"
@@ -31,12 +30,8 @@ S="${WORKDIR}/mISDNuser"
 PATCHES=( "${FILESDIR}/${P}-udev-rulesd.patch" )
 DOCS=( "AUTHORS" "COPYING.LIB" "LICENSE" "NEWS" "README" )
 
-src_prepare() {
-	base_src_prepare
-	eautoreconf
-}
-
 src_configure() {
+	eautoreconf
 	# install example applications too, contains some useful stuff like misdntestlayer1
 	econf \
 		$(use_enable capi) \
