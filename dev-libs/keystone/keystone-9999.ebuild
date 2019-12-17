@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 DISTUTILS_OPTIONAL=1
 CMAKE_MIN_VERSION=3.8.7
@@ -17,7 +17,7 @@ if [[ ${PV} == 9999* ]]; then
 	inherit git-r3
 	KEYWORDS=""
 elif [[ ${PV} == 0_p* ]]; then
-	MY_COMMIT=f19be804a9c4c72cb73e9513610f225a46ba52b8
+	MY_COMMIT="105761ffe7176a60b4ff1b1c165ad937110ae63e"
 	SRC_URI="https://github.com/keystone-engine/"${PN}"/tarball/"${MY_COMMIT}" -> "${P}".tar.gz"
 	S=""${WORKDIR}"/keystone-engine-"${PN}"-"${MY_COMMIT:0:7}""
 	KEYWORDS="~amd64 ~x86"

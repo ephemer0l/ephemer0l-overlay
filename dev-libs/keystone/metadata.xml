@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		Keystone assembler framework: Core (Arm, Arm64, Hexagon, Mips, PowerPC,
+		Sparc, SystemZ and X86) plus bindings 
+	</longdescription>
+	<upstream>
+		<changelog>https://github.com/keystone-engine/keystone/commits/master</changelog>
+		<doc>http://www.keystone-engine.org/docs/</doc>
+		<bugs-to>https://github.com/keystone-engine/keystone/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
