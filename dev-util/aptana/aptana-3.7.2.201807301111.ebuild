@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -26,7 +26,7 @@ IUSE=""
 
 RDEPEND="media-libs/libjpeg-turbo
 	>=virtual/jre-1.5
-	media-libs/libpng:1.2
+	media-libs/libpng
 	x11-libs/gtk+:2
 	sys-apps/net-tools"
 
