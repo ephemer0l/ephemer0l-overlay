@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 DISTUTILS_OPTIONAL=1
 CMAKE_MIN_VERSION=3.8.7

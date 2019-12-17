@@ -7,7 +7,7 @@ inherit cmake-utils
 
 DESCRIPTION="Interface to (en|de)code audio with AMBE3000 devices over a serial link."
 HOMEPAGE="https://github.com/f4exb/serialDV"
-LICENSE=""
+LICENSE="GPL-3"
 SLOT="0"
 
 _GIT_USER="f4exb"
