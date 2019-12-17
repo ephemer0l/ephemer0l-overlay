@@ -1,6 +1,6 @@
 To add this *Unofficial* Gentoo overlay  
 using the repos.conf file:  
-'mkdir /var/lib/overlays/ephemer0l-overlay && chown portage:portage /var/lib/overlays/ephemer0l-overlay'  
+'mkdir /var/db/repos/ephemer0l-overlay && chown portage:portage /var/db/repos/ephemer0l-overlay'  
   
 And add the folowing file:  
 /etc/portage/repos.conf/ephemer0l-overlay.conf  
@@ -8,7 +8,7 @@ And add the folowing file:
 With the following contents:  
   
 [ephemer0l-overlay]  
-location = /var/lib/overlays/ephemer0l-overlay  
+location = /var/db/repos/ephemer0l-overlay  
 sync-type = git  
 sync-uri = https://github.com/ephemer0l/ephemer0l-overlay.git  
 autosync = yes  
@@ -20,29 +20,29 @@ Or with layman:
 
 Packages in the overlay
 
-[app-editors/Komodo-Edit-bin] Freeware advanced editor for dynamic and Web languages 
+[app-editors/Komodo-Edit-bin](http://www.activestate.com/products/komodo_edit) Freeware advanced editor for dynamic and Web languages 
 
-[app-editors/Komodo-IDE] Freeware advanced IDE for dynamic and Web languages 
+[app-editors/Komodo-IDE](://www.activestate.com/komodo-ide) Freeware advanced IDE for dynamic and Web languages 
 
-[app-misc/XPL-SEARCH] 
+[app-misc/XPL-SEARCH](https://github.com/CoderPirata/XPL-SEARCH) Search exploits/vulnerabilities in multiple databases online! 
 
-[app-mobilephone/gsmlib]
+[app-mobilephone/gsmlib](http://www.pxh.de/fs/gsmlib/) Library and applications to access GSM mobile phones  
 
-[dev-java/oracle-jdk-bin] you know what this is... 
+[dev-java/oracle-jdk-bin](http://www.oracle.com/technetwork/java/javase/) you know what this is... 
 
-[dev-libs/keystone]
+[dev-lang/hunter](https://cpp-pm-hunter.readthedocs.io/en/latest/overview.html) CMake driven cross-platform package manager for C/C++ 
 
-[dev-libs/serialDV]
+[dev-libs/keystone](http://www.keystone-engine.org/) assembly/assembler framework + bindings 
 
-[dev-util/aptana] 
+[dev-libs/serialDV]() Interface to (en|de)code audio with AMBE3000 devices over a serial link. 
 
-[dev-util/plasma] 
+[dev-util/aptana](https://github.com/ephemer0l/ephemer0l-overlay/tree/master/dev-util/aptana) The leading eclipse IDE for Ajax and today's web platforms  
 
-[games-simulation/ThePowderToy]
+[dev-util/plasma](https://github.com/ephemer0l/ephemer0l-overlay/tree/master/dev-util/plasma) An interactive disassembler for x86/ARM/MIPS  
 
-[games-util/kaiEngine]
+[games-simulation/ThePowderToy](https://github.com/ephemer0l/ephemer0l-overlay/tree/master/games-simulation/ThePowderToy) The Powder Toy is a free physics sandbox  
 
-[mail-filter/libspf2]
+[games-util/kaiEngine](https://github.com/ephemer0l/ephemer0l-overlay/tree/master/games-util/kaiEngine) Gaming network-bringing together XBox (360,XBox), Playstation (2,3,PSP) users  
 
 [media-fonts/b612] Font family designed and tested to be used on aircraft cockpit screens  
 

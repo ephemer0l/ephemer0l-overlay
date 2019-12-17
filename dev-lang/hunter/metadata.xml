@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		CMake driven cross-platform package manager for C/C++.
+	</longdescription>
+	<upstream>
+		<changelog>https://github.com/cpp-pm/hunter/commits/master</changelog>
+		<doc>https://cpp-pm-hunter.readthedocs.io/</doc>
+		<bugs-to>https://github.com/cpp-pm/hunter/issues/new</bugs-to>
+	</upstream>
+</pkgmetadata>
