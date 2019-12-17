@@ -1,0 +1,11 @@
+--- /var/tmp/portage/media-video/plex-ffmpeg-0_p20190823/work/configure	2019-08-23 18:38:50.000000000 -0500
++++ /var/tmp/portage/media-video/plex-ffmpeg-0_p20190823/work/configure.mod	2019-09-17 14:33:13.277061139 -0500
+@@ -2058,7 +2058,7 @@
+ PROGRAM_LIST="
+     ffplay
+     ffprobe
+-    ffmpeg
++    plex-ffmpeg
+ "
+ 
+ SUBSYSTEM_LIST="
