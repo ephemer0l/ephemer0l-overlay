@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		Serialization library for Exceptions and Tracebacks.
+	</longdescription>
+	<upstream>
+		<changelog>https://github.com/ionelmc/python-tblib/commits/master</changelog>
+		<doc>https://github.com/ionelmc/python-tblib/blob/master/README.rst</doc>
+		<bugs-to>https://github.com/ionelmc/python-tblib/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
