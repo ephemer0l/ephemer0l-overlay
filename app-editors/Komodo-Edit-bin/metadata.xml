@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer type="person">
-		<name>Scott Martin</name>
-		<email>om@organizedmagnetism.com</email>
-	</maintainer>
 	<longdescription lang="en">
+		Komodo Edit is a fast and free multi-language code editor.
+		Written in JS, Python, C++ and based on the Mozilla platform.
 	</longdescription>
 	<use>
-		<flag name='pax_kernel'>Triggers paxmarking of the main komodo-edit binary</flag>
+		<flag name="pax-kernel">Add PaX markings</flag>
 	</use>
+	<upstream>
+		<changelog>https://github.com/Komodo/KomodoEdit/commits/master</changelog>
+		<doc>https://github.com/Komodo/KomodoEdit/wiki</doc>
+		<bugs-to>https://github.com/Komodo/KomodoEdit/issues</bugs-to>
+	</upstream>
 </pkgmetadata>
