@@ -8,18 +8,18 @@ inherit pax-utils systemd unpacker user
 DESCRIPTION="A free media library that is intended for use with a plex client"
 HOMEPAGE="https://www.plex.tv/"
 
-_COMMIT="cacaa3be8"
+_COMMIT="349e9837e"
 MY_PV="${PV}-${_COMMIT}"
 
-#URI="https://downloads.plex.tv/plex-media-server-new"
-URI="https://artifacts.plex.tv/plex-media-server-experimental/"
+URI="https://downloads.plex.tv/plex-media-server-new"
+#URI="https://artifacts.plex.tv/plex-media-server-experimental/"
 SRC_URI="
 	amd64? ( ${URI}/${MY_PV}/debian/plexmediaserver_${MY_PV}_amd64.deb )
 	x86? ( ${URI}/${MY_PV}/debian/plexmediaserver_${MY_PV}_i386.deb )"
 
 LICENSE="PLEX"
 SLOT="0"
-KEYWORDS="-*"
+KEYWORDS="-* ~amd64 ~x86"
 RESTRICT="mirror bindist strip"
 IUSE="custom-ffmpeg system-openssl"
 
