@@ -76,7 +76,6 @@ src_install() {
 		rm "usr/lib/plexmediaserver/lib/libavutil.so.56" || die echo "libavutil.so.56 missing"
 	fi
 
-
 	# Copy main files over to image and preserve permissions so it is portable
 	cp -rp usr/ "${ED}" || die
 
