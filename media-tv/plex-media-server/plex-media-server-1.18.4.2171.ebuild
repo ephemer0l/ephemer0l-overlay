@@ -8,10 +8,11 @@ inherit pax-utils systemd unpacker user
 DESCRIPTION="A free media library that is intended for use with a plex client"
 HOMEPAGE="https://www.plex.tv/"
 
-_COMMIT="982421575"
+_COMMIT="ac2afe5f8"
 MY_PV="${PV}-${_COMMIT}"
 
 URI="https://downloads.plex.tv/plex-media-server-new"
+#URI="https://artifacts.plex.tv/plex-media-server-experimental/"
 SRC_URI="
 	amd64? ( ${URI}/${MY_PV}/debian/plexmediaserver_${MY_PV}_amd64.deb )
 	x86? ( ${URI}/${MY_PV}/debian/plexmediaserver_${MY_PV}_i386.deb )"
@@ -74,6 +75,7 @@ src_install() {
 		rm "usr/lib/plexmediaserver/lib/libswscale.so.5" || die echo "libswscale.so.5 missing"
 		rm "usr/lib/plexmediaserver/lib/libavutil.so.56" || die echo "libavutil.so.56 missing"
 	fi
+
 
 	# Copy main files over to image and preserve permissions so it is portable
 	cp -rp usr/ "${ED}" || die
