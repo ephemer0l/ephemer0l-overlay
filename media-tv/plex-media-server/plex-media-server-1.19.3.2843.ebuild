@@ -111,6 +111,11 @@ src_install() {
 
 #	pax-mark m "${ED%/}/usr/lib/plexmediaserver/Plex Script Host" || die
 #	pax-mark m "${ED%/}/usr/lib/plexmediaserver/Plex Media Scanner" || die
+
+	# Fix RPATH
+	patchelf --force-rpath --set-rpath '$ORIGIN:$ORIGIN/../../../../../../lib' "${ED}"/usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_codecs_kr.so || die
+
+
 }
 
 pkg_postinst() {
