@@ -1,0 +1,8 @@
+--- /usr/share/applications/plexmediaserver.desktop.org	2020-05-23 01:39:34.105959787 -0500
++++ /usr/share/applications/plexmediaserver.desktop	2020-05-23 01:40:34.109296633 -0500
+@@ -6,4 +6,4 @@
+ Icon=plexmediaserver
+ Terminal=false
+ Type=Application
+-Categories=Audio;Music;Video;Player;Media;
++Categories=AudioVideo;Audio;Music;Video;Player;
