@@ -7,4 +7,4 @@ LICENSE=MIT
 RDEPEND=media-tv/Comskip
 SLOT=0
 SRC_URI=https://github.com/BrettSheleski/comchap/tarball/bc03ed03d47ac5b29b6c65d4b698dc7865809d49 -> comchap-0_p20190317.tar.gz
-_md5_=b57a62ab9fc0863bcd4a9330ccf385af
+_md5_=cc11ff58cdbea1124dad5c868c36423f
