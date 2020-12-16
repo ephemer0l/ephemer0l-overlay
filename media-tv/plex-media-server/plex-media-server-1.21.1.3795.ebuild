@@ -116,6 +116,7 @@ src_install() {
 
 	# Fix RPATH
 	patchelf --force-rpath --set-rpath '$ORIGIN:$ORIGIN/../../../../../../lib' "${ED}"/usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_codecs_kr.so || die
+	patchelf --force-rpath --set-rpath '$ORIGIN:$ORIGIN/../../../../../../lib' "${ED}"/usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_multibytecodec.so || die
 
 
 }
