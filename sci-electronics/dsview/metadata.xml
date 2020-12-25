@@ -2,15 +2,14 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>om@OrganizedMagnetism.com</email>
-		<name>Scott Martin</name>
+		<email>vowstar@gmail.com</email>
+		<name>Huang Rui</name>
 	</maintainer>
 	<longdescription lang="en">
-		DSView is an GUI programe for supporting various instruments 
-		from DreamSourceLab, including logic analyzer, oscilloscope, 
-		etc. DSView is based on sigrok project.
+		DSView is an GUI programe for supporting various instruments from DreamSourceLab, including logic analyzer, oscilloscope, etc. DSView is based on sigrok project. The sigrok project aims at creating a portable, cross-platform, Free/Libre/Open-Source signal analysis software suite that supports various device types (such as logic analyzers, oscilloscopes, multimeters, and more).
 	</longdescription>
 	<upstream>
+		<remote-id type="github">DreamSourceLab/DSView</remote-id>
 		<changelog>https://github.com/DreamSourceLab/DSView/commits/master</changelog>
 		<bugs-to>https://github.com/DreamSourceLab/DSView/issues</bugs-to>
 	</upstream>
