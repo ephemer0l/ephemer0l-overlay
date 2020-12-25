@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>om@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		DSView is an GUI programe for supporting various instruments 
+		from DreamSourceLab, including logic analyzer, oscilloscope, 
+		etc. DSView is based on sigrok project.
+	</longdescription>
+	<upstream>
+		<changelog>https://github.com/DreamSourceLab/DSView/commits/master</changelog>
+		<bugs-to>https://github.com/DreamSourceLab/DSView/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
