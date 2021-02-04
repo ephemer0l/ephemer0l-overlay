@@ -8,7 +8,7 @@ inherit pax-utils systemd unpacker
 DESCRIPTION="A free media library that is intended for use with a plex client"
 HOMEPAGE="https://www.plex.tv/"
 
-_COMMIT="a91458577"
+_COMMIT="4fda5f3d5"
 MY_PV="${PV}-${_COMMIT}"
 
 URI="https://downloads.plex.tv/plex-media-server-new"
