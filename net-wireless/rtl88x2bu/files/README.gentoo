@@ -1,0 +1,3 @@
+If using signed kernel modules change the '<hash>' and '<kernel>' values to match your setup:
+/usr/src/linux/scripts/sign-file <hash> /usr/src/linux/certs/signing_key.pem \
+/usr/src/linux/certs/signing_key.x509 /lib/modules/<kernel>/net/wireless/88x2bu.ko

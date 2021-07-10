@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>om@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		Linux Driver for USB WiFi Adapters that are based on the RTL8812BU and RTL8822BU Chipsets.
+	</longdescription>
+	<use>
+		<flag name="dist-kernel">Enable subslot rebuilds on Distribution Kernel upgrades.</flag>
+	</use>
+	<upstream>
+		<bugs-to>https://github.com/morrownr/88x2bu/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
