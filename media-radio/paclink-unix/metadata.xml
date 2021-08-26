@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>om@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		UNIX client interface to the Winlink 2000 ham radio email system
+	</longdescription>
+	<upstream>
+		<bugs-to>https://sourceforge.net/p/paclink-unix/bugs/</bugs-to>
+	</upstream>
+</pkgmetadata>

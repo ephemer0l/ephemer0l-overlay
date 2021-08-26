@@ -1,0 +1,14 @@
+--- a/configure	2021-07-21 13:15:44.192946567 -0500
++++ b/configure	2021-07-21 13:16:21.712275480 -0500
+@@ -537,9 +537,9 @@
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=/
+ ac_clean_files=
+-ac_config_libobj_dir=.
++ac_config_libobj_dir=/usr/
+ LIBOBJS=
+ cross_compiling=no
+ subdirs=

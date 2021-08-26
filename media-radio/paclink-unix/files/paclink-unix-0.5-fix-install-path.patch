@@ -1,0 +1,42 @@
+--- a/configure	2021-07-21 13:37:36.602804600 -0500
++++ b/configure	2021-07-21 13:41:21.332118125 -0500
+@@ -537,9 +537,9 @@
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=/
+ ac_clean_files=
+-ac_config_libobj_dir=.
++ac_config_libobj_dir=/lib/libexec
+ LIBOBJS=
+ cross_compiling=no
+ subdirs=
+@@ -742,14 +742,14 @@
+ # by default will actually change.
+ # Use braces instead of parens because sh, perl, etc. also accept them.
+ # (The list follows the same order as the GNU Coding Standards.)
+-bindir='${exec_prefix}/bin'
+-sbindir='${exec_prefix}/sbin'
+-libexecdir='${exec_prefix}/libexec'
++bindir='${prefix}/bin'
++sbindir='${prefix}/sbin'
++libexecdir='/lib/libexec'
+ datarootdir='${prefix}/share'
+ datadir='${datarootdir}'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='${prefix}/var/spool/mail/'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+ docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+@@ -758,7 +758,7 @@
+ dvidir='${docdir}'
+ pdfdir='${docdir}'
+ psdir='${docdir}'
+-libdir='${exec_prefix}/lib'
++libdir='${prefix}/lib'
+ localedir='${datarootdir}/locale'
+ mandir='${datarootdir}/man'
+ 
