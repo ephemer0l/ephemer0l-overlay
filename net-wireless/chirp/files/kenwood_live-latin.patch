@@ -1,0 +1,11 @@
+--- a/chirp/drivers/kenwood_live.py	2021-08-26 12:47:53.580839885 -0500
++++ b/chirp/drivers/kenwood_live.py	2021-08-26 12:48:16.670422943 -0500
+@@ -84,7 +84,7 @@
+ 
+     result = ""
+     while not result.endswith(LAST_DELIMITER[0]):
+-        result += ser.read(COMMAND_RESP_BUFSIZE).decode()
++        result += ser.read(COMMAND_RESP_BUFSIZE).decode('latin-')
+         if (time.time() - start) > 0.5:
+             LOG.error("Timeout waiting for data")
+             break
