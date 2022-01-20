@@ -5,7 +5,7 @@ EAPI=8
 
 inherit readme.gentoo-r1 systemd unpacker
 
-MY_PV="${PV}-c43dc0277"
+MY_PV="${PV}-eb46d070e"
 MY_URI="https://downloads.plex.tv/plex-media-server-new"
 
 DESCRIPTION="Free media library that is intended for use with a plex client"
@@ -33,10 +33,11 @@ QA_MULTILIB_PATHS=(
 	"usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_hashlib.so"
 )
 
-src_install() {
-	# Remove Debian apt repo files
-	rm -r "etc/apt" || die
+src_prepare() {
+	eapply_user
+}
 
+src_install() {
 	# Remove Debian specific files
 	rm -r "usr/share/doc" || die
 
@@ -46,10 +47,6 @@ src_install() {
 
 	# Copy main files over to image and preserve permissions so it is portable
 	cp -rp usr/ "${ED}" || die
-
-	# Make sure the logging directory is created
-	keepdir /var/log/pms
-	fowners plex:plex /var/log/pms
 
 	keepdir /var/lib/plexmediaserver
 	fowners plex:plex /var/lib/plexmediaserver
