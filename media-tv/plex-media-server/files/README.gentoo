@@ -1,6 +1,8 @@
 Plex Media Server is now installed. Please check the configuration file.
 It can be found in /etc/default/plexmediaserver to verify the default settings.
-Adjust thread counts and memory usage limits for best performance.
+If using DVR with commercial skipping (Plex Pass required) you can change number
+of threads the comskip program uses by adding 'thread_count=#' to:
+/usr/lib/plexmediaserver/Resources/comskip.ini
 
 To start the Plex Server, run 'rc-config start plex-media-server'
 You will then be able to access your library at http://localhost:32400/manage

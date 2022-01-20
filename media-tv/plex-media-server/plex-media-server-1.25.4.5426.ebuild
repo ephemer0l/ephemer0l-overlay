@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Author ephemer0l
+# Copyright 1999-2022 Gentoo Author ephemer0l
 # Distributed under the terms of the NWA License
 
 EAPI=8
@@ -41,12 +41,12 @@ src_install() {
 	# Remove Debian specific files
 	rm -r "usr/share/doc" || die
 
+	# Copy main files over to image and preserve permissions so it is portable
+	cp -rp usr/ "${ED}" || die
+
 	# Add user config file
 	mkdir -p "${ED}/etc/default" || die
 	cp usr/lib/plexmediaserver/lib/plexmediaserver.default "${ED}"/etc/default/plexmediaserver || die
-
-	# Copy main files over to image and preserve permissions so it is portable
-	cp -rp usr/ "${ED}" || die
 
 	keepdir /var/lib/plexmediaserver
 	fowners plex:plex /var/lib/plexmediaserver
