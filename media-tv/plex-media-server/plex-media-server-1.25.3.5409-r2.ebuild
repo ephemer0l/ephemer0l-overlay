@@ -33,12 +33,14 @@ QA_MULTILIB_PATHS=(
 	"usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_hashlib.so"
 )
 
+_PLUGINS="export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS="
+_CONFIG_FILE="${S}/usr/lib/plexmediaserver/lib/plexmediaserver.default"
+
 src_prepare() {
 	eapply_user
 
 	# Set Plugin threads from MAKEOPTS
-	sed -i -e 's/*MAX_PLUGIN_PROCS\=.*/PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS\='$(makeopts_jobs)'/g' \
-		${S}/usr/lib/plexmediaserver/lib/plexmediaserver.default || die
+	sed -i -e 's/#"${_PLUGINS}".*/"${_PLUGINS}"'$(makeopts_jobs)'/g' "${_CONFIG_FILE}" || die
 
 	# Get MAKEOPTS and add job number for threading comskip
 	sed -i '/^thread_count=/{h;s/=.*/='$(makeopts_jobs)'/};${x;/^$/{s//thread_count='$(makeopts_jobs)'/;H};x}' \
