@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Author ephemer0l
+# Copyright 1999-2022 Gentoo Author ephemer0l
 # Distributed under the terms of the NWA License
 
 EAPI=8
@@ -18,7 +18,7 @@ S="${WORKDIR}"
 LICENSE="Plex"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-RESTRICT="mirror bindist"
+RESTRICT="bindist" # public releases can drop mirror per bug #600696
 
 DEPEND="
 	acct-group/plex
@@ -33,23 +33,20 @@ QA_MULTILIB_PATHS=(
 	"usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_hashlib.so"
 )
 
-src_install() {
-	# Remove Debian apt repo files
-	rm -r "etc/apt" || die
+src_prepare() {
+	eapply_user
+}
 
+src_install() {
 	# Remove Debian specific files
 	rm -r "usr/share/doc" || die
-
-	# Add user config file
-	mkdir -p "${ED}/etc/default" || die
-	cp usr/lib/plexmediaserver/lib/plexmediaserver.default "${ED}"/etc/default/plexmediaserver || die
 
 	# Copy main files over to image and preserve permissions so it is portable
 	cp -rp usr/ "${ED}" || die
 
-	# Make sure the logging directory is created
-	keepdir /var/log/pms
-	fowners plex:plex /var/log/pms
+	# Add user config file
+	mkdir -p "${ED}/etc/default" || die
+	cp usr/lib/plexmediaserver/lib/plexmediaserver.default "${ED}"/etc/default/plexmediaserver || die
 
 	keepdir /var/lib/plexmediaserver
 	fowners plex:plex /var/lib/plexmediaserver
