@@ -3,9 +3,9 @@
 
 EAPI=8
 
-inherit readme.gentoo-r1 systemd unpacker
+inherit readme.gentoo-r1 multiprocessing systemd unpacker
 
-MY_PV="${PV}-eb46d070e"
+MY_PV="${PV}-989df2310"
 MY_URI="https://downloads.plex.tv/plex-media-server-new"
 
 DESCRIPTION="Free media library that is intended for use with a plex client"
@@ -18,7 +18,7 @@ S="${WORKDIR}"
 LICENSE="Plex"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-RESTRICT="mirror bindist"
+RESTRICT="mirror bindist" # public releases can drop mirror per bug #600696
 
 DEPEND="
 	acct-group/plex
@@ -35,6 +35,14 @@ QA_MULTILIB_PATHS=(
 
 src_prepare() {
 	eapply_user
+
+	# Set Plugin threads from MAKEOPTS
+	sed -i -e 's/*MAX_PLUGIN_PROCS\=.*/PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS\='$(makeopts_jobs)'/g' \
+		${S}/usr/lib/plexmediaserver/lib/plexmediaserver.default || die
+
+	# Get MAKEOPTS and add job number for threading comskip
+	sed -i '/^thread_count=/{h;s/=.*/='$(makeopts_jobs)'/};${x;/^$/{s//thread_count='$(makeopts_jobs)'/;H};x}' \
+		${S}/usr/lib/plexmediaserver/Resources/comskip.ini || die
 }
 
 src_install() {

@@ -1,11 +1,11 @@
-# Copyright 1999-2021 Gentoo Author ephemer0l
+# Copyright 1999-2022 Gentoo Author ephemer0l
 # Distributed under the terms of the NWA License
 
 EAPI=8
 
-inherit readme.gentoo-r1 systemd unpacker
+inherit readme.gentoo-r1 multiprocessing systemd unpacker
 
-MY_PV="${PV}-f05b712b6"
+MY_PV="${PV}-eb46d070e"
 MY_URI="https://downloads.plex.tv/plex-media-server-new"
 
 DESCRIPTION="Free media library that is intended for use with a plex client"
@@ -33,23 +33,28 @@ QA_MULTILIB_PATHS=(
 	"usr/lib/plexmediaserver/Resources/Python/lib/python2.7/lib-dynload/_hashlib.so"
 )
 
-src_install() {
-	# Remove Debian apt repo files
-	rm -r "etc/apt" || die
+src_prepare() {
+	eapply_user
 
+	# Set Plugin threads from MAKEOPTS
+	sed -i -e 's/*MAX_PLUGIN_PROCS\=.*/PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS\='$(makeopts_jobs)'/g' \
+		${S}/usr/lib/plexmediaserver/lib/plexmediaserver.default || die
+
+	# Get MAKEOPTS and add job number for threading comskip
+	sed -i '/^thread_count=/{h;s/=.*/='$(makeopts_jobs)'/};${x;/^$/{s//thread_count='$(makeopts_jobs)'/;H};x}' \
+		${S}/usr/lib/plexmediaserver/Resources/comskip.ini || die
+}
+
+src_install() {
 	# Remove Debian specific files
 	rm -r "usr/share/doc" || die
-
-	# Add user config file
-	mkdir -p "${ED}/etc/default" || die
-	cp usr/lib/plexmediaserver/lib/plexmediaserver.default "${ED}"/etc/default/plexmediaserver || die
 
 	# Copy main files over to image and preserve permissions so it is portable
 	cp -rp usr/ "${ED}" || die
 
-	# Make sure the logging directory is created
-	keepdir /var/log/pms
-	fowners plex:plex /var/log/pms
+	# Add user config file
+	mkdir -p "${ED}/etc/default" || die
+	cp usr/lib/plexmediaserver/lib/plexmediaserver.default "${ED}"/etc/default/plexmediaserver || die
 
 	keepdir /var/lib/plexmediaserver
 	fowners plex:plex /var/lib/plexmediaserver
