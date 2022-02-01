@@ -5,6 +5,9 @@
 	<email>ephemer0l+Gentoo+packages@OrganizedMagnetism.com</email>
 	<name>Scott Martin</name>
 </maintainer>
+<use>
+	<flag name="test">run tests</flag>
+</use>
 <longdescription lang="en">
 	Modified the original yenc module for use within SABnzbd.
 
