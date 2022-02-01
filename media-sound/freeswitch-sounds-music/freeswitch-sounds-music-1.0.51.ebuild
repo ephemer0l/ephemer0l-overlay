@@ -29,4 +29,3 @@ src_install() {
 	dodir /usr/share/freeswitch/sounds
 	mv "${S}"/* "${D}/usr/share/freeswitch/sounds/" || die "Failed to copy sound files"
 }
-
