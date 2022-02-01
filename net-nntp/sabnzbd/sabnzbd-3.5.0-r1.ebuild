@@ -53,8 +53,9 @@ RDEPEND="
 	>=app-arch/par2cmdline-0.4
 	net-misc/wget
 	7za? ( app-arch/p7zip )
-	rar? ( || ( app-arch/unrar app-arch/rar ) )
+	rar? ( app-arch/unrar )
 	unzip? ( >=app-arch/unzip-5.5.2 )
+	media-video/mediainfo
 "
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
