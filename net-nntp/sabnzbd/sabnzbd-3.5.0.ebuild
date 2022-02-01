@@ -4,7 +4,7 @@
 EAPI="8"
 
 # Require python-2 with sqlite USE flag
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{7..10} )
 PYTHON_REQ_USE="sqlite"
 
 inherit python-single-r1 systemd
@@ -42,7 +42,7 @@ COMMON_DEPS="
 		dev-python/notify2[${PYTHON_USEDEP}]
 		dev-python/portend[${PYTHON_USEDEP}]
 		dev-python/puremagic[${PYTHON_USEDEP}]
-		>=dev-python/sabyenc-4[${PYTHON_USEDEP}]
+		dev-python/sabyenc[${PYTHON_USEDEP}]
 	')
 "
 
