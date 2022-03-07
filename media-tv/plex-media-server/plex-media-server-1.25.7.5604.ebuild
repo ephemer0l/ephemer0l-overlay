@@ -5,7 +5,7 @@ EAPI=8
 
 inherit readme.gentoo-r1 multiprocessing systemd unpacker
 
-MY_PV="${PV}-c8bd13540"
+MY_PV="${PV}-980a13e02"
 MY_URI="https://downloads.plex.tv/plex-media-server-new"
 
 DESCRIPTION="Free media library that is intended for use with a plex client"
@@ -18,7 +18,7 @@ S="${WORKDIR}"
 LICENSE="Plex"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-RESTRICT="bindist" # public releases can drop mirror per bug #600696
+RESTRICT="mirror bindist" # public releases can drop mirror per bug #600696
 
 DEPEND="
 	acct-group/plex
