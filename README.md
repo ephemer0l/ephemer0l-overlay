@@ -13,10 +13,6 @@ sync-type = git
 sync-uri = https://github.com/ephemer0l/ephemer0l-overlay.git  
 autosync = yes  
 sync-user = portage:portage  
-  
-Or with layman:  
-'layman -o https://github.com/ephemer0l/ephemer0l-overlay/blob/master/reposatories.xml -f -a ephemer0l-overlay'  
-
 
 Packages in the overlay
 
