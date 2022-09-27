@@ -10,9 +10,16 @@ inherit distutils-r1 python-r1 xdg
 DESCRIPTION="Display Calibration and Characterization powered by Argyll CMS"
 HOMEPAGE="https://displaycal.net"
 
-MY_PN="DisplayCAL"
-SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz"
-S="${WORKDIR}/${MY_PN}-${PV}"
+if [[ ${PV} == "9999" ]] ; then
+	inherit git-r3
+	EGIT_BRANCH="main"
+	EGIT_REPO_URI="https://github.com/eoyilmaz/displaycal-py3.git"
+	KEYWORDS=""
+else
+	MY_PN="DisplayCAL"
+	SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_PN}-${PV}.tar.gz"
+	S="${WORKDIR}/${MY_PN}-${PV}"
+fi
 
 LICENSE="GPL-3"
 SLOT="0"

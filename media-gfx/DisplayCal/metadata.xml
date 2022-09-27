@@ -15,9 +15,12 @@ Calibrate and characterize your display devices using one of many supported meas
 Create synthetic ICC profiles with custom primaries, white- and blackpoint as well as tone response for use as working spaces or source profiles in device linking (3D LUT) transforms.
 	DisplayCAL is developed and maintained by Florian Höch, and would not be possible without ArgyllCMS, which is developed and maintained by Graeme W. Gill.
 	</longdescription>
+	<use>
+		<flag name="chromecast">add chromecast support</flag>
+	</use>
 	<upstream>
-		<changelog>https://sourceforge.net/p/dispcalgui/code/commit_browser</changelog>
-		<doc>https://sourceforge.net/p/dispcalgui/wiki/Home/</doc>
-		<bugs-to>https://sourceforge.net/p/dispcalgui/bug-reports/</bugs-to>
+		<changelog>https://github.com/eoyilmaz/displaycal-py3/commits/main</changelog>
+		<doc>https://displaycal.net/#toc</doc>
+		<bugs-to>https://github.com/eoyilmaz/displaycal-py3/issues</bugs-to>
 	</upstream>
 </pkgmetadata>
