@@ -82,7 +82,7 @@ pkg_postinst() {
 
 	echo "If updating from a version prior to 1.29.1.6276, there was some DB changes made by me, \
 	you need to run the following manualy as your plex user to update the plex DB's for the new larger \
-	cache size for improved performance.
+	cache size for improved performance. Plex service needs to be stopped before running the folowing:
 
 	$ /usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"
 
