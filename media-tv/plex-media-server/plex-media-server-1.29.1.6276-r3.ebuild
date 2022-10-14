@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit readme.gentoo-r1 multiprocessing systemd unpacker
+inherit multiprocessing systemd unpacker #readme.gentoo-r1
 
 MY_PV="${PV}-4a96dd5b1"
 MY_URI="https://downloads.plex.tv/plex-media-server-new"
@@ -17,13 +17,14 @@ S="${WORKDIR}"
 
 LICENSE="Plex"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS=""
 RESTRICT="mirror bindist" # public releases can drop mirror per bug #600696
 
 DEPEND="
 	acct-group/plex
 	acct-user/plex"
 RDEPEND="${DEPEND}"
+#	media-video/plex-ffmpeg"
 
 QA_PREBUILT="*"
 QA_MULTILIB_PATHS=(
@@ -54,6 +55,14 @@ src_install() {
 	# Remove Debian specific files
 	rm -r "usr/share/doc" || die
 
+	# Remove shipped Plex Transcoder for source based replacement
+#	rm usr/lib/plexmediaserver/lib/libswscale.so.5
+#	rm usr/lib/plexmediaserver/lib/libavfilter.so.7
+#	rm usr/lib/plexmediaserver/lib/libavcodec.so.58
+#	rm usr/lib/plexmediaserver/lib/libswresample.so.3
+#	rm usr/lib/plexmediaserver/lib/libavformat.so.58
+#	rm usr/lib/plexmediaserver/lib/libavutil.so.56
+
 	# Copy main files over to image and preserve permissions so it is portable
 	cp -rp usr/ "${ED}" || die
 
@@ -80,12 +89,12 @@ src_install() {
 pkg_postinst() {
 	readme.gentoo_print_elog
 
-	echo "If updating from a version prior to 1.29.1.6276, there was some DB changes made by me, \
-	you need to run the following manualy as your plex user to update the plex DB's for the new larger \
-	cache size for improved performance. Plex service needs to be stopped before running the folowing:
+	elog "If updating from a version prior to 1.29.1.6276, there was some DB changes made,"
+	elog "you need to run the following manualy as your plex user ( #su - plex -s /bin/bash )"
+	elog "to update	plex databases for the new larger cache size for improved performance."
+	elog "Plex service needs to be stopped before running the folowing:"
 
-	$ /usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"
+	elog '/usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"'
 
-	$ /usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.blobs.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize""
-
+	elog '/usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.blobs.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"'
 }
