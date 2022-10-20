@@ -5,7 +5,7 @@ EAPI=8
 
 inherit multiprocessing systemd unpacker #readme.gentoo-r1
 
-MY_PV="${PV}-4a96dd5b1"
+MY_PV="${PV}-f4cdfea9c"
 MY_URI="https://downloads.plex.tv/plex-media-server-new"
 
 DESCRIPTION="Free media library that is intended for use with a plex client"
