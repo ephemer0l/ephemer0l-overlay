@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit multiprocessing systemd unpacker #readme.gentoo-r1
+inherit multiprocessing systemd unpacker readme.gentoo-r1
 
 MY_PV="${PV}-f4cdfea9c"
 MY_URI="https://downloads.plex.tv/plex-media-server-new"
@@ -17,8 +17,9 @@ S="${WORKDIR}"
 
 LICENSE="Plex"
 SLOT="0"
-KEYWORDS=""
-RESTRICT="mirror bindist" # public releases can drop mirror per bug #600696
+KEYWORDS="~amd64 ~x86"
+RESTRICT="bindist mirror" # public releases can drop mirror per bug #600696
+IUSE="experimental"
 
 DEPEND="
 	acct-group/plex
@@ -45,10 +46,12 @@ src_prepare() {
 
 	# Get MAKEOPTS and add job number for threading comskip
 	sed -i '/^thread_count=/{h;s/=.*/='$(makeopts_jobs)'/};${x;/^$/{s//thread_count='$(makeopts_jobs)'/;H};x}' \
-		${S}/usr/lib/plexmediaserver/Resources/comskip.ini || die
+		"${S}"/usr/lib/plexmediaserver/Resources/comskip.ini || die
 
-	# increse sql cache size to speed up DB
-	sed -i -e "'s/cache_size=2000/cache_size=8192/' '${S}/usr/lib/plexmediaserver/Plex Media Server'"
+	if USE experimental; then
+		# increse sql cache size to speed up DB
+		sed -i -e "'s/cache_size=2000/cache_size=8192/' '${S}/usr/lib/plexmediaserver/Plex Media Server'" || die
+	fi
 }
 
 src_install() {
@@ -83,18 +86,28 @@ src_install() {
 	insinto /etc/revdep-rebuild
 	doins "${FILESDIR}"/80plexmediaserver
 
+	if USE experimental; then
+		cp "${FILESDIR}"/DBrepair.sh "${ED}"/usr/sbin/
+	fi
+
 	readme.gentoo_create_doc
 }
 
 pkg_postinst() {
 	readme.gentoo_print_elog
 
-	elog "If updating from a version prior to 1.29.1.6276, there was some DB changes made,"
-	elog "you need to run the following manualy as your plex user ( #su - plex -s /bin/bash )"
-	elog "to update	plex databases for the new larger cache size for improved performance."
-	elog "Plex service needs to be stopped before running the folowing:"
+	if USE experimental; then
+		elog "If updating from a version prior to 1.29.1.6276, there was some DB changes made,"
+		elog "you need to run the following manualy as your plex user ( #su - plex -s /bin/bash )"
+		elog "to update	plex databases for the new larger cache size for improved performance."
+		elog "Plex service needs to be stopped before running the folowing:"
 
-	elog '/usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"'
+		elog '/usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"'
 
-	elog '/usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.blobs.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"'
+		elog '/usr/lib/plexmediaserver/Plex\ SQLite /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.blobs.db "PRAGMA page_size=65536" "PRAGMA journal_mode=DELETE" "VACUUM" "PRAGMA journal_mode=WAL" "PRAGMA optimize"'
+
+		elog 'there is a DB repair script installed in /usr/sbin/DBRepair.sh'
+		elog 'run it as root user to fix any database issues'
+		elog 'this is an experamental script'
+	fi
 }
