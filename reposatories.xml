@@ -2,7 +2,7 @@
 <repositories version="1.0">
 	<repo quality="experimental" status="unofficial">
 		<name>om</name>
-		<description lang="en">ephemer0l' Gentoo overly for ebuilds</description>
+		<description lang="en">ephemer0l's Gentoo overly for ebuilds</description>
 		<homepage>https://github.com/ephemer0l/om</homepage>
 		<owner type="person">
 			<email>github@OrganizedMagnetism.com</email>
