@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>om@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		A modular console-oriented amateur radio AX.25 keyboard to keyboard chat and PBBS program using Linux's AX.25 stack. Includes support for multiple concurrent connected sessions, a unconnected (UI) message screen, and an automated packet message client
+	</longdescription>
+	<upstream>
+		<changelog>https://sourceforge.net/p/linpac/linpac/ci/master/tree/ChangeLog</changelog>
+		<bugs-to>https://sourceforge.net/p/linpac/bugs/</bugs-to>
+	</upstream>
+</pkgmetadata>

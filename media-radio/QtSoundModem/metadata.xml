@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>om@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		QtSoundModem (QtSM) is a multi-platform port of UZ7HO's SoundModem.
+	</longdescription>
+	<upstream>
+		<doc>http://uz7.ho.ua/modem_beta/user_guide_v105_EN.pdf</doc>
+	</upstream>
+</pkgmetadata>

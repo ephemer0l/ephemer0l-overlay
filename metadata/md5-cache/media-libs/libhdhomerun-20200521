@@ -1,0 +1,11 @@
+DEFINED_PHASES=configure install
+DESCRIPTION=SiliconDust HDHomeRun Utilties
+EAPI=7
+HOMEPAGE=http://www.silicondust.com/support/hdhomerun/downloads/linux/
+INHERIT=eutils
+KEYWORDS=~amd64
+LICENSE=LGPL-3+
+SLOT=0
+SRC_URI=http://download.silicondust.com/hdhomerun/libhdhomerun_20200521.tgz
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32
+_md5_=480c1406fbb1aca13d3f5eba6237b422

@@ -1,0 +1,10 @@
+BDEPEND=dev-lang/ocaml dev-ml/ocamlbuild dev-util/indent
+DEFINED_PHASES=-
+DESCRIPTION=FFTW code optimized for AMD based processors
+EAPI=7
+HOMEPAGE=https://github.com/amd/amd-fftw
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL
+SLOT=0
+SRC_URI=https://github.com/amd/amd-fftw/tarball/eac74f1ceba4289cc0253c3105bf743b1589cfdd -> amd-fftw-2.0.tar.gz
+_md5_=f5f4052fabdf2fd0dc794d2d42f3b722

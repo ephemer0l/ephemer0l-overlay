@@ -1,0 +1,57 @@
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: 9/12/2014 $
+
+EAPI=4
+
+PYTHON_COMPAT=( python2_7 )
+
+if [[ ${PV} == "9999" ]] ; then
+    SCM=mercurial
+    EHG_REPO_URI="http://d-rats.com/hg/d-rats.hg"
+	EHG_REVISION="current-beta"
+	KEYWORDS=""
+else
+    SCM=mercurial
+    EHG_REPO_URI="http://d-rats.com/hg/d-rats.hg"
+    EHG_REVISION="release_0_3_3" 
+    KEYWORDS="~amd64 ~x86"
+fi
+
+inherit distutils-r1 ${SCM}
+
+DESCRIPTION="A Communications Tool For D-STAR"
+HOMEPAGE="http://www.d-rats.com/"
+#SRC_URI="http://d-rats.danplanet.com/download/v0.3.x/d-rats-${PV}.tar.gz"
+
+LICENSE="GPL-3 Unlicense"
+SLOT="0"
+IUSE="spell"
+
+DEPEND=""
+
+RDEPEND="
+    spell? ( app-text/aspell )
+    dev-libs/libxslt[python]
+    dev-python/pyserial
+
+"
+
+src_prepare() {
+if [[ ${PV} == "9999" ]] ; then
+	VER='hg id -i -r0 ${EHG_STORE_DIR}'
+	echo 'DRATS_VERSION = ' >  ${WORKDIR}/${P}/d_rats/version.py 
+#	ver=(hg id -i -r0 ${EHG_STORE_DIR})
+#	sed -n  "DRATS_VERSION\s=\s${ver}w" "${WORKDIR}/${P}/d_rats/version.py"
+	${ver} | sed s/$/ "${WORKDIR}/${P}/d_rats/version.py"
+fi
+	sed -i -e "/share\/doc\/d-rats/d" setup.py || die
+    distutils-r1_src_prepare
+} 
+
+python_test() {
+    pushd tests > /dev/null
+    "${PYTHON}" run_tests || die
+    popd > /dev/null
+}
+

@@ -3,10 +3,11 @@ DEPEND=>=media-libs/libhdhomerun-20141210
 DESCRIPTION=SiliconDust HDHomeRun Configuration Utiltiy
 EAPI=6
 HOMEPAGE=http://www.silicondust.com/support/hdhomerun/downloads/linux/
+INHERIT=eutils
 KEYWORDS=~amd64
 LICENSE=LGPL-3+
 RDEPEND=>=x11-libs/gtk+-2.18.3 <x11-libs/gtk+-3.12.2 >=media-libs/libhdhomerun-20141210
 SLOT=0
 SRC_URI=http://download.silicondust.com/hdhomerun/hdhomerun_config_gui_20180817.tgz
-_eclasses_=desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	ac7989ababbeabdef6fdc6e465b21644	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_eclasses_=desktop	7eb20ad915a0a318176d51bc2508ff5c	edos2unix	33e347e171066657f91f8b0c72ec8773	estack	055c42df72f76a4f45ec92b35e83cd56	epatch	447396341f5f896d722e435a06f87a4f	eqawarn	c9847c43b3253a276ae2eabddedab3d7	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157	ltprune	97143780d341cc8d8f1d4c6187a36d29	preserve-libs	a8e50acee31b5759b4df1f7707cae54b	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	vcs-clean	d271b7bc7e6a009758d7d4ef749174e3	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32
 _md5_=1c40d14dc8ed8297b17f28b6843eac89

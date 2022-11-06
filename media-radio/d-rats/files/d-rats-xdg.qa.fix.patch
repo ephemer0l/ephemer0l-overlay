@@ -1,0 +1,42 @@
+diff -Naur share/d-rats.desktop share/d-rats.desktop
+--- share/d-rats.desktop	2011-05-09 20:04:39.000000000 -0500
++++ share/d-rats.desktop	2014-06-02 13:22:36.035520199 -0500
+@@ -6,8 +6,8 @@
+ Icon=d-rats2
+ StartupNotify=true
+ Terminal=false
+-Categories=Application;HamRadio
+-MimeType=inode/directory
++Categories=Other;
++MimeType=inode/directory;
+ Name=D-RATS
+ Comment=D-STAR Communication Tool
+ GenericName=D-STAR Communication Tool
+diff -Naur share/d-rats_mapdownloader.desktop share/d-rats_mapdownloader.desktop
+--- share/d-rats_mapdownloader.desktop	2011-05-09 20:04:39.000000000 -0500
++++ share/d-rats_mapdownloader.desktop	2014-06-02 13:23:18.412187784 -0500
+@@ -6,8 +6,8 @@
+ Icon=d-rats2
+ StartupNotify=true
+ Terminal=false
+-Categories=Application;HamRadio
+-MimeType=inode/directory
++Categories=Other;
++MimeType=inode/directory;
+ Name=D-RATS Map Downloader
+ Comment=D-RATS Map Downloader
+ GenericName=D-RATS Map Downloader
+diff -Naur share/d-rats_repeater.desktop share/d-rats_repeater.desktop
+--- share/d-rats_repeater.desktop	2011-05-09 20:04:39.000000000 -0500
++++ share/d-rats_repeater.desktop	2014-06-02 13:23:31.932188077 -0500
+@@ -6,8 +6,8 @@
+ Icon=d-rats2
+ StartupNotify=true
+ Terminal=false
+-Categories=Application;HamRadio
+-MimeType=inode/directory
++Categories=Other;
++MimeType=inode/directory;
+ Name=D-RATS Repeater
+ Comment=D-RATS Repeater
+ GenericName=D-RATS Repeater

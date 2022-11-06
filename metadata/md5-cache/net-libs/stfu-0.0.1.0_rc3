@@ -1,0 +1,7 @@
+DEFINED_PHASES=compile install unpack
+EAPI=7
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+SLOT=0
+SRC_URI=http://files.freeswitch.org/freeswitch-1.0.1.tar.gz
+_md5_=a9f0eff9cc52b1378ca14f6c12f738a6

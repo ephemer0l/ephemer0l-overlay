@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=On-Hold Music for FreeSWITCH
+EAPI=5
+HOMEPAGE=http://www.freeswitch.org/
+IUSE=+8k 16k 32k 48k
+KEYWORDS=~amd64 ~x86
+LICENSE=MPL-1.1
+REQUIRED_USE=|| ( 8k 16k 32k 48k )
+SLOT=0
+SRC_URI=8k? ( http://files.freeswitch.org/releases/sounds/freeswitch-sounds-music-8000-1.0.51.tar.gz ) 16k? ( http://files.freeswitch.org/releases/sounds/freeswitch-sounds-music-16000-1.0.51.tar.gz ) 32k? ( http://files.freeswitch.org/releases/sounds/freeswitch-sounds-music-32000-1.0.51.tar.gz ) 48k? ( http://files.freeswitch.org/releases/sounds/freeswitch-sounds-music-48000-1.0.51.tar.gz )
+_md5_=739aa38b6295914111955519deaaf941

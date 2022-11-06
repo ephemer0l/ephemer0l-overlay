@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>om@OrganizedMagnetism.com</email>
+		<name>Scott Martin</name>
+	</maintainer>
+	<longdescription lang="en">
+		A set of utilities for packet radio mail exchange with the BBS. For use with the Linpac terminal programs as well as others
+	</longdescription>
+	<upstream>
+		<changelog>https://sourceforge.net/p/ax25mail/ax25mail-utils/ci/master/tree/ChangeLog</changelog>
+		<bugs-to>https://sourceforge.net/p/ax25mail/bugs/</bugs-to>
+	</upstream>
+</pkgmetadata>

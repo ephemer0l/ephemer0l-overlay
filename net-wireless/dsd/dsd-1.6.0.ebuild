@@ -1,7 +1,9 @@
-# Copyright 1999-2017 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
+# Copyright 1999-2022 Gentoo Author ephemer0l
+# Distributed under the terms of the NWA License
 
-EAPI=6
+EAPI=8
+
+inherit cmake
 
 DESCRIPTION="Digital Speech Decoder"
 HOMEPAGE="https://github.com/szechyjs/dsd"
@@ -24,17 +26,3 @@ DEPEND="${DEPEND}
 	media-libs/libsndfile
 	sci-libs/fftw:3.0
 "
-
-src_prepare() {
-	sed -i \
-		-e "s#DEST_BASE=/usr/local#DEST_BASE=${ED}/usr/#" \
-		-e "s#CFLAGS =#CFLAGS ?=#" \
-		-e 's#$(CFLAGS)#$(CFLAGS) $(LDFLAGS)#' \
-		-e '#CFLAGS ?=#a LDFLAGS?=#' \
-		Makefile
-}
-
-src_install() {
-	dodir /usr/bin
-	default
-}

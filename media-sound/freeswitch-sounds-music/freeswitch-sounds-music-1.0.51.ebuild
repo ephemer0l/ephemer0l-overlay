@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="8"
+EAPI="5"
 
 DESCRIPTION="On-Hold Music for FreeSWITCH"
 HOMEPAGE="http://www.freeswitch.org/"
@@ -14,11 +14,11 @@ SLOT="0"
 
 URI_BASE="http://files.freeswitch.org/releases/sounds/${PN}"
 SRC_URI="
-	8k? ( ${URI_BASE}-8000-${PV}.tar.gz )
+	 8k? ( ${URI_BASE}-8000-${PV}.tar.gz )
 	16k? ( ${URI_BASE}-16000-${PV}.tar.gz )
 	32k? ( ${URI_BASE}-32000-${PV}.tar.gz )
 	48k? ( ${URI_BASE}-48000-${PV}.tar.gz )
-	"
+        "
 
 DEPEND=""
 RDEPEND="${DEPEND}"
@@ -29,3 +29,4 @@ src_install() {
 	dodir /usr/share/freeswitch/sounds
 	mv "${S}"/* "${D}/usr/share/freeswitch/sounds/" || die "Failed to copy sound files"
 }
+

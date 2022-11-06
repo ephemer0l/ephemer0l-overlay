@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		Python SDK to access the vulnerability database
+	</longdescription>
+	<upstream>
+		<changelog>https://github.com/vulndb/python-sdk/commits/master</changelog>
+		<doc>https://github.com/vulndb/python-sdk/blob/master/README.rst</doc>
+		<bugs-to>https://github.com/vulndb/python-sdk/issues</bugs-to>
+	</upstream>
+</pkgmetadata>

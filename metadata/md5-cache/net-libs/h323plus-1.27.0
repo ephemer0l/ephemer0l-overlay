@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure prepare
+DEPEND=>=net-libs/ptlib-2.6.4:=[-debug,wav] aec? ( >=media-libs/speex-1.2_rc1 ) sound? ( media-sound/gsm dev-libs/ilbc-rfc3951 ) video? ( media-libs/libtheora virtual/ffmpeg ) net-nds/openldap dev-libs/openssl:0=
+DESCRIPTION=ITU H.323 implementation of teleconferencing protocol, successor to OpenH323
+EAPI=7
+HOMEPAGE=http://www.h323plus.org/
+INHERIT=eutils flag-o-matic multilib toolchain-funcs
+IUSE=aec debug +sound +video
+KEYWORDS=~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd
+LICENSE=MPL-1.1
+RDEPEND=>=net-libs/ptlib-2.6.4:=[-debug,wav] aec? ( >=media-libs/speex-1.2_rc1 ) sound? ( media-sound/gsm dev-libs/ilbc-rfc3951 ) video? ( media-libs/libtheora virtual/ffmpeg ) net-nds/openldap dev-libs/openssl:0= !net-libs/openh323
+SLOT=0/1.27.0
+SRC_URI=https://github.com/willamowius/h323plus/archive/v1_27_0.tar.gz -> h323plus-1.27.0.tar.gz
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	29a755b1291d64133634d80b0328f153
+_md5_=d5f6f8c54682658a4945ce6271ee183b

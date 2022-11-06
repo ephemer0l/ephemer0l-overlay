@@ -1,7 +1,7 @@
-# Copyright 2019 Gentoo Authors
+# Copyright 2022 Gentoo Author ephemer0l
 # Distributed under the terms of the NWA General License
 
-EAPI=6
+EAPI=8
 
 inherit font git-r3
 

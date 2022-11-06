@@ -1,10 +1,10 @@
-# Copyright 1999-2017 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
+# Copyright 1999-2022 Gentoo Author ephemer0l
+# Distributed under the terms of the NWA License
 
-EAPI=6
+EAPI=8
 
-PYTHON_COMPAT=( python2_7 )
-inherit cmake-utils git-r3
+PYTHON_COMPAT=( python{2_7,3_{8,9,10,11}} )
+inherit cmake git-r3
 
 DESCRIPTION="GNU Radio block for LTE signals"
 HOMEPAGE="https://github.com/kit-cel/gr-lte"

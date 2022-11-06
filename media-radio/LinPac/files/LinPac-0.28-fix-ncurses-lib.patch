@@ -1,0 +1,11 @@
+--- a/configure	2021-07-24 13:45:24.865629152 -0500
++++ b/configure	2021-07-24 13:47:32.436687765 -0500
+@@ -15881,7 +15881,7 @@
+ #define HAVE_LIBNCURSES 1
+ _ACEOF
+ 
+-  LIBS="-lncurses $LIBS"
++  LIBS="-lncurses -ltinfo $LIBS"
+ 
+ else
+   { { $as_echo "$as_me:$LINENO: error: ncurses library not found !" >&5

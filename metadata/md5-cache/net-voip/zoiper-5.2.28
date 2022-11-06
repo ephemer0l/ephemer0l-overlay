@@ -1,0 +1,13 @@
+DEFINED_PHASES=install nofetch
+DESCRIPTION=free VoIP softphone for non-commercial use
+EAPI=7
+HOMEPAGE=https://www.zoiper.com/en/voip-softphone
+INHERIT=pax-utils
+IUSE=video
+KEYWORDS=~amd64
+RDEPEND=>=sys-devel/gcc-6.0.0 x11-libs/libnotify x11-libs/libXScrnSaver video? ( media-libs/libv4l )
+RESTRICT=fetch mirror strip
+SLOT=5
+SRC_URI=https://www.zoiper.com/en/voip-softphone/download/zoiper5/for/linux -> zoiper5_5.2.28_x86_64.tar.xz
+_eclasses_=pax-utils	91d47e5d20627c717aa878b9167c62a8
+_md5_=0d79b6be9e841bbfb9546f2ca39b3101

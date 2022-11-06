@@ -1,0 +1,35 @@
+--- a/configure	2021-07-24 12:48:53.709412487 -0500
++++ b/configure	2021-07-24 12:49:47.938445812 -0500
+@@ -583,7 +583,7 @@
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=/
+ ac_clean_files=
+ ac_config_libobj_dir=.
+ LIBOBJS=
+@@ -755,7 +755,7 @@
+ # The variables have the same names as the options, with
+ # dashes changed to underlines.
+ cache_file=/dev/null
+-exec_prefix=NONE
++exec_prefix=/usr/
+ no_create=
+ no_recursion=
+ prefix=NONE
+@@ -775,10 +775,10 @@
+ # by default will actually change.
+ # Use braces instead of parens because sh, perl, etc. also accept them.
+ # (The list follows the same order as the GNU Coding Standards.)
+-bindir='${exec_prefix}/bin'
+-sbindir='${exec_prefix}/sbin'
+-libexecdir='${exec_prefix}/libexec'
+-datarootdir='${prefix}/share'
++bindir='${prefix}/bin'
++sbindir='${prefix}/sbin'
++libexecdir='/usr/libexec'
++datarootdir='/usr/share'
+ datadir='${datarootdir}'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'

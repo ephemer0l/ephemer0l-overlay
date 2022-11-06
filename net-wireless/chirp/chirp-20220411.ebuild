@@ -1,0 +1,67 @@
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+PYTHON_COMPAT=( python3_{8,9,10} )
+
+inherit distutils-r1 xdg-utils ${SCM}
+
+DESCRIPTION="Fork of a free open-source tool for programming your amateur radio"
+HOMEPAGE="https://github.com/mpoletiek/py3-CHIRP"
+
+RESTRICT="test"
+
+if [[ ${PV} == "99999999" ]] ; then
+	inherit mercurial
+	EHG_REPO_URI="http://d-rats.com/hg/chirp.hg"
+	KEYWORDS=""
+else
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/mpoletiek/py3-CHIRP.git"
+	HASH_COMMIT=="91ddb6e78dd197d4b4abe6ed8c1fbacf8308987d"
+#	S="${WORKDIR}/py3-CHIRP-${HASH_COMMIT}"
+	#python3 brach: http://d-rats.com/hg/hgwebdir.cgi/chirp.hg/shortlog/68534f20c141
+#	HASH_COMMIT="68534f20c141"
+#	SRC_URI="http://d-rats.com/hg/hgwebdir.cgi/chirp.hg/archive/${HASH_COMMIT}.tar.gz -> ${P}.tar.gz"
+#	S="${WORKDIR}/${PN}-hg-${HASH_COMMIT}"
+
+#	SRC_URI="http://trac.${PN}.danplanet.com/${PN}_daily/daily-${PV}/${PN}-daily-${PV}.tar.gz"
+#still not a python3 version
+	KEYWORDS="~amd64 ~x86"
+#	S="${WORKDIR}/${PN}-daily-${PV}"
+fi
+LICENSE="GPL-3"
+SLOT="0"
+IUSE="radioreference"
+
+DEPEND="${PYTHON_DEPS}
+	dev-python/pygobject[${PYTHON_USEDEP}]
+	dev-python/pyserial[${PYTHON_USEDEP}]
+	dev-libs/libxml2[python]
+	dev-python/future[${PYTHON_USEDEP}]"
+RDEPEND="${DEPEND}
+	radioreference? ( dev-python/suds-community[${PYTHON_USEDEP}] )
+	dev-python/wxpython[${PYTHON_USEDEP}]"
+
+PATCHES=( ${FILESDIR}/kenwood_live-latin.patch )
+
+src_prepare() {
+	sed -i -e "/share\/doc\/chirp/d" setup.py || die
+	sed -i -e "s/\"tests\",//" setup.py || die
+	sed -i -e "s/\"tests.unit\",//" setup.py || die
+	distutils-r1_src_prepare
+}
+
+python_test() {
+	pushd tests > /dev/null
+	"${PYTHON}" run_tests || die
+	popd > /dev/null
+}
+
+pkg_postinst() {
+	xdg_desktop_database_update
+}
+
+pkg_postrm() {
+	xdg_desktop_database_update
+}

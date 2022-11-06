@@ -1,7 +1,7 @@
-# Copyright 1999-2019 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
+# Copyright 1999-2022 Gentoo Author ephemer0l
+# Distributed under the terms of the NWA License
 
-EAPI=4
+EAPI=7
 
 inherit eutils toolchain-funcs
 

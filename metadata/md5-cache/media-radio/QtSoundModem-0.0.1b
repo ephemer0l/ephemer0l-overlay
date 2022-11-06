@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile configure
+DEPEND=sci-libs/fftw:* dev-qt/qtserialport
+DESCRIPTION=A multi-platform port of UZ7HO's SoundModem
+EAPI=7
+HOMEPAGE=http://www.cantab.net/users/john.wiseman/Documents/QtSoundModem.html
+KEYWORDS=~amd64 ~x86
+RDEPEND=sci-libs/fftw:* dev-qt/qtserialport
+SLOT=0
+SRC_URI=http://www.cantab.net/users/john.wiseman/Downloads/Beta/QtSMSource.zip
+_md5_=2251ee1d1973f46f5f8653aed6c79618

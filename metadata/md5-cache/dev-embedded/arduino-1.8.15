@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile configure install postinst preinst prepare setup unpack
+DEPEND=dev-embedded/arduino-builder app-arch/unzip >=virtual/jdk-1.8 >=dev-java/java-config-2.2.0-r3 >=dev-java/ant-core-1.8.2:0 dev-java/javatoolkit
+DESCRIPTION=An open-source AVR electronics prototyping platform
+EAPI=7
+HOMEPAGE=https://arduino.cc/ https://github.com/arduino/
+INHERIT=java-pkg-2 java-ant-2 gnome2-utils
+IUSE=doc
+KEYWORDS=amd64 x86
+LICENSE=GPL-2 LGPL-2.1 CC-BY-SA-3.0
+RDEPEND=dev-embedded/arduino-builder >=dev-util/astyle-3.1[java] dev-embedded/arduino-listserialportsc >=virtual/jre-1.8 >=dev-java/java-config-2.2.0-r3
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/arduino/Arduino/archive/1.8.15.tar.gz -> arduino-1.8.15.tar.gz https://downloads.arduino.cc/cores/avr-1.8.2.tar.bz2 -> arduino-avr-1.8.2.tar.bz2 https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.10.10/WiFi101-Updater-ArduinoIDE-Plugin-0.10.10.zip -> arduino-WiFi101-Updater-ArduinoIDE-Plugin-0.10.10.zip doc? ( https://downloads.arduino.cc/reference-1.6.6-3.tar.gz -> arduino-reference-1.6.6-3.zip https://downloads.arduino.cc/Galileo_help_files-1.6.2.tar.gz -> arduino-Galileo_help_files-1.6.2.zip https://downloads.arduino.cc/Edison_help_files-1.6.2.tar.gz -> arduino-Edison_help_files-1.6.2.zip )
+_eclasses_=java-utils-2	c79d65661a9f4f72b60376c9e4b3dfa1	java-pkg-2	3b09e051fc2045a0f0b9471b87d4f8bd	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	java-ant-2	5cf479aa9e0ac9cc55899f2762c2aaa0	xdg-utils	ac0e315a3688929e34ac75b139e7349a	gnome2-utils	2116cec8f46f4d1b0a88c5b1f1575dd3
+_md5_=71e289fd5b6e301e1d7e6ed951e7ad1b

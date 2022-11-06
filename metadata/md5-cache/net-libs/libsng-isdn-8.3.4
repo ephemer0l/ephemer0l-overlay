@@ -1,0 +1,14 @@
+DEFINED_PHASES=install prepare unpack
+DEPEND=net-misc/wanpipe
+DESCRIPTION=Sangoma ISDN library
+EAPI=7
+HOMEPAGE=http://www.sangoma.com/
+INHERIT=eutils
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=unknown
+RDEPEND=net-misc/wanpipe
+RESTRICT=mirror strip
+SLOT=0
+SRC_URI=amd64? ( ftp://ftp.sangoma.com/linux/libsng_isdn/libsng_isdn-8.3.4.x86_64.tgz ) x86? ( ftp://ftp.sangoma.com/linux/libsng_isdn/libsng_isdn-8.3.4.i686.tgz )
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32
+_md5_=5d26764bb1860b84e9162b10792d5b5c

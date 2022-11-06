@@ -1,0 +1,12 @@
+DEFINED_PHASES=install
+DESCRIPTION=A fairly simple module, it provide only raw yEnc encoding/decoding
+EAPI=7
+HOMEPAGE=http://www.golug.it/yenc.html
+INHERIT=eutils python-r1
+IUSE=python_targets_python3_8 python_targets_python3_9 python_targets_python3_10 python_targets_python3_11
+KEYWORDS=~amd64
+LICENSE=LGPL-2.1
+SLOT=0
+SRC_URI=http://www.golug.it/pub/yenc/yenc-0.4.0.tar.gz
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	multibuild	d26d81f242cb193d899a72bca423d0bd	eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157	python-utils-r1	b9fc5e97e886514e5132f50465185401	python-r1	2d51fd03931e743811ce30d198e4dcfd
+_md5_=ef2e4414fe61d0d536dfb09c47f618a0

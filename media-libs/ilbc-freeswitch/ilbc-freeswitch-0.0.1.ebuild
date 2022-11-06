@@ -1,14 +1,12 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=6
-
+EAPI=7
 
 inherit eutils autotools
 
 DESCRIPTION="Packaged version of iLBC codec from the WebRTC project"
-HOMEPAGE=""
+HOMEPAGE="https://webrtc.github.io/webrtc-org/license/ilbc-freeware/"
 
 MY_PN="ilbc"
 MY_P="${MY_PN}-${PV}"

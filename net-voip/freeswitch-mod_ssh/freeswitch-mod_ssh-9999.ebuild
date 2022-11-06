@@ -1,10 +1,9 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: This ebuild is from freeswitch overlay; Bumped by mva; $
 
-EAPI="4"
+EAPI="8"
 
-inherit git-2 flag-o-matic
+inherit git-r3 flag-o-matic
 
 IUSE=""
 

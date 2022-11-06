@@ -1,11 +1,12 @@
+BDEPEND=X? ( >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=install postinst postrm setup unpack
-DEPEND=X? ( >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings ) >=dev-vcs/git-1.8.2.1[curl]
 DESCRIPTION=font family designed and tested to be used on aircraft cockpit screens
-EAPI=6
+EAPI=8
 HOMEPAGE=http://b612-font.com
+INHERIT=font git-r3
 IUSE=X
 LICENSE=ESL-2 OFL-1.1
 PROPERTIES=live
 SLOT=0
-_eclasses_=desktop	7fd20552ce4cc97e8acb132a499a7dd8	epatch	ed88001f77c6dd0d5f09e45c1a5b480e	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	font	dd073b36fe3fd8b868c23bc23209db45	git-r3	86a0188f2ad9eb3d65e4d031ab8a0422	ltprune	2729691420b6deeda2a90b1f1183fb55	multilib	ac7989ababbeabdef6fdc6e465b21644	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
-_md5_=c4358e4bcd3a77ea7516e73002df0df5
+_eclasses_=font	bc7d91ca9054e47ad87b5763214665a4	git-r3	b9ac6f96d2a88edb5b351df634dc5e53
+_md5_=91633202d4a37e14c1aa0a07633a081f
