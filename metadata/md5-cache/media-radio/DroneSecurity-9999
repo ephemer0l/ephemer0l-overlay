@@ -1,0 +1,13 @@
+BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
+DEFINED_PHASES=unpack
+DESCRIPTION=Drone-ID Receiver for DJI OcuSync 2.0
+EAPI=8
+HOMEPAGE=https://github.com/RUB-SysSec/DroneSecurity
+INHERIT=git-r3 python-r1
+IUSE=spectrum-display python_targets_python3_9 python_targets_python3_10 python_targets_python3_11
+KEYWORDS=~amd64 ~x86
+PROPERTIES=live
+RDEPEND=dev-python/bitarray[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/crcmod[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/cycler[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/fonttools[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/kiwisolver[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/matplotlib[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/numpy[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/pillow[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/pyparsing[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/python-dateutil[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/scipy[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] dev-python/six[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] spectrum-display? ( net-wireless/inspectrum[python_targets_python3_9(-)?,python_targets_python3_10(-)?,python_targets_python3_11(-)?] ) net-wireless/uhd
+SLOT=0
+_eclasses_=git-r3	2347f8fe2d392b2a091191f94be37e6f	out-of-source-utils	1a9007554652a6e627edbccb3c25a439	multibuild	bddcb51b74f4a76724ff7cf8e7388869	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	python-utils-r1	429bfd4e8d8e39db5385ba5744f30788	python-r1	666be58f658d6b32affe30f80e39a49e
+_md5_=e145536e2e783eb624bf2e5e2e68b434
